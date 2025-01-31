@@ -1,0 +1,21 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Distribute iOS app via Firebase App Distribution"
+  lane :firebase_distribution do
+    build_app(
+      scheme: "Runner", 
+      workspace: "Runner.xcworkspace",
+      export_method: "ad-hoc"
+    )
+
+    firebase_app_distribution(
+      app: "1:131857091064:ios:e4a9d20ede521634bbae0d", 
+      ipa_path: "build/ios/iphoneos/Runner.ipa", 
+      testers: "test@example.com", 
+      groups: "testers", 
+      release_notes: "New iOS release via Fastlane 🚀",
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"] 
+    )
+  end
+end

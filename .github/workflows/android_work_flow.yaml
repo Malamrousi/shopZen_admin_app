@@ -1,0 +1,44 @@
+name: Firebase Android Distribution
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  android:
+    name: Build and Deploy Android App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'  
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+         with:
+        channel: stable
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: "3.4.1"
+        bundler-cache: true
+        working-directory: android
+
+      - name: Run Fastlane for Firebase App Distribution (Android)
+        env:
+          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }} 
+        run: |
+        
+        bundle exec fastlane android firebase_distribution
+      working-directory: android

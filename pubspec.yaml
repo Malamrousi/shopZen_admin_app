@@ -51,6 +51,7 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.4.14
+  flutter_launcher_icons: ^0.14.3
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
@@ -70,7 +71,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-  #   - images/a_dot_ham.jpeg
+    #   - images/a_dot_ham.jpeg
     - assets/translations/
     - assets/images/
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -97,7 +98,6 @@ flutter:
           weight: 500
         - asset: assets/fonts/Cairo-Bold.ttf
           weight: 700
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 flutter_assets:
@@ -106,3 +106,20 @@ flutter_assets:
   filename: assets.dart
   field_prefix: null
   ignore_comments: true
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/app_icon_circle.png"
+  web:
+    generate: true
+    image_path: "assets/images/app_icon.png"
+    background_color: "#ffffff"
+  windows:
+    generate: true
+    image_path: "assets/images/app_icon.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/app_icon.png"

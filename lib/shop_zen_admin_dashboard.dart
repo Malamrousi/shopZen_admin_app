@@ -30,7 +30,6 @@ class ShopZenAdminDashboard extends StatelessWidget {
               )
               ..getSavedLanguage(),
             child: ScreenUtilInit(
-              designSize: const Size(375, 812),
               minTextAdapt: true,
               child: BlocBuilder<AppCubit, AppState>(
                 buildWhen: (previous, current) {
@@ -39,9 +38,9 @@ class ShopZenAdminDashboard extends StatelessWidget {
                 builder: (context, state) {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
-                    title: 'ShopZen',
+                    title: 'shopZen Dashboard',
                     debugShowCheckedModeBanner: false,
-                    theme: cubit.isDark ? themeLight() : themeDark(),
+                    theme: cubit.isDark ? themeDark() : themeLight(),
                     locale: Locale(cubit.currentLangCode),
                     localizationsDelegates: const [
                       AppLocalizations.delegate,
@@ -49,32 +48,21 @@ class ShopZenAdminDashboard extends StatelessWidget {
                       GlobalWidgetsLocalizations.delegate,
                       GlobalCupertinoLocalizations.delegate,
                     ],
-                    builder: (context, widget) {
-                      return Scaffold(
-                        body: Builder(
-                          builder: (context) {
-                            ConnectivityController.instance.init();
-                            return widget!;
-                          },
-                        ),
-                      );
-                    },
+        
+                    
                     navigatorKey: getIt.get<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: generateRoute,
-                    initialRoute:RouteName.login
-                       ,
+                    initialRoute: RouteName.login,
                     localeResolutionCallback: (deviceLocale, supportedLocales) {
                       if (deviceLocale != null) {
                         for (var locale in supportedLocales) {
-                          if (deviceLocale.languageCode ==
-                                  locale.languageCode &&
+                          if (deviceLocale.languageCode == locale.languageCode &&
                               deviceLocale.countryCode == locale.countryCode) {
                             return locale;
                           }
                         }
                         for (var locale in supportedLocales) {
-                          if (deviceLocale.languageCode ==
-                              locale.languageCode) {
+                          if (deviceLocale.languageCode == locale.languageCode) {
                             return locale;
                           }
                         }
@@ -90,7 +78,7 @@ class ShopZenAdminDashboard extends StatelessWidget {
           );
         } else {
           return MaterialApp(
-            title: 'No NetWork ',
+            title: 'No Network',
             debugShowCheckedModeBanner: false,
             home: const NoNetworkScreen(),
           );

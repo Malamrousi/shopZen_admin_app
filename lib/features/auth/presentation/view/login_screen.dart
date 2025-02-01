@@ -10,7 +10,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ResponsiveLayout(mobile: MobileLoginScreen(), tablet: TabletLoginScreen(), desktop: DesktopLoginScreen()),
+      body: SafeArea(child: ResponsiveLayout(mobile: MobileLoginScreen(), tablet: TabletLoginScreen(), desktop: DesktopLoginScreen())),
     );
   }
 }

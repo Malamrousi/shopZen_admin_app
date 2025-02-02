@@ -9,16 +9,15 @@ class DesktopLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: SingleChildScrollView(
         child: Column(
           children: [
             CustomDesktopAppBar(),
             verticalSpacing(50),
             DesktopLoginBody()
-            
           ],
         ),
       ),

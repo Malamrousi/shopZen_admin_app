@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_desktop_app_bar.dart';
 
+import '../../../../../core/helper/spacing.dart';
+import 'desktop_login_body.dart';
+
 class DesktopLoginScreen extends StatelessWidget {
   const DesktopLoginScreen({super.key});
 
@@ -13,6 +16,8 @@ class DesktopLoginScreen extends StatelessWidget {
         child: Column(
           children: [
             CustomDesktopAppBar(),
+            verticalSpacing(50),
+            DesktopLoginBody()
             
           ],
         ),

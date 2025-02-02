@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/colors_manger.dart';
+import '../utils/styles/app_text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -42,7 +43,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         title,
-        style: textStyle,
+        style: textStyle ?? AppTextStyles.font20WhiteColorRegular(context),
       ),
     );
   }

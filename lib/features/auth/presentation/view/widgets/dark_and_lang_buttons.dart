@@ -51,7 +51,7 @@ class DarkAndLangButtons extends StatelessWidget {
               cubit.currentLangCode == ENGLISH
                   ? "arabic".tr(context)
                   : "english".tr(context),
-              style: AppTestStyles.font16Regular(context),
+              style: AppTextStyles.font16Regular(context),
             ),
           ),
         ),

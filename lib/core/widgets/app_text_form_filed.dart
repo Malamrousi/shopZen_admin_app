@@ -1,11 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopzen_admin_dashboard/core/shared_pref/shared_pref.dart';
 import 'package:shopzen_admin_dashboard/core/utils/colors_manger.dart';
-
-
-import '../shared_pref/shared_prefs_key.dart';
 import '../utils/styles/app_text_styles.dart';
 
 class AppTextFormFiled extends StatelessWidget {
@@ -36,7 +31,6 @@ class AppTextFormFiled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
     return TextFormField(
       controller: controller,
       validator: (value) {
@@ -45,21 +39,21 @@ class AppTextFormFiled extends StatelessWidget {
       obscureText: isObscureText ?? false,
       decoration: InputDecoration(
           filled: true,
-          fillColor:  isDark ? ColorsManger.whiteColor : ColorsManger.blackColor,
+          fillColor: fillColor ?? ColorsManger.gray100,
           isDense: true,
           contentPadding: contentPadding ??
-              EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+              EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           focusedBorder: focusedBorder ??
               OutlineInputBorder(
                 borderSide:
                      BorderSide(color: ColorsManger.gray300, width: 1.3),
-                borderRadius: BorderRadius.circular(8.r),
+                borderRadius: BorderRadius.circular(8),
               ),
           enabledBorder: enabledBorder ??
               OutlineInputBorder(
                 borderSide:  BorderSide(
                     color:ColorsManger.gray500, width: 1.3),
-                borderRadius: BorderRadius.circular(8.r),
+                borderRadius: BorderRadius.circular(8),
               ),
           focusedErrorBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.red, width: 1.3)),
@@ -67,12 +61,12 @@ class AppTextFormFiled extends StatelessWidget {
               borderSide: BorderSide(color: Colors.red, width: 1.3)),
           hintText: hintText,
           suffixIcon: suffixIcon,
-          hintStyle: hintStyle ?? AppTestStyles.font16Regular(context).copyWith(
+          hintStyle: hintStyle ?? AppTextStyles.font16Regular(context).copyWith(
               color: 
                    ColorsManger.gray500
             
           )),
-      style: AppTestStyles.font16RegularThemeColor(context),
+      style: AppTextStyles.font16RegularThemeColor(context),
     );
   }
 }

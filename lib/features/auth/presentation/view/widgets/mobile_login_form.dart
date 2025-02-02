@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_text_rich.dart';
 
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../core/widgets/app_text_form_filed.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import 'custom_text_rich.dart';
 
-class TabletLoginForm extends StatelessWidget {
-  const TabletLoginForm({super.key});
+class MobileLoginForm extends StatelessWidget {
+  const MobileLoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,23 +20,23 @@ class TabletLoginForm extends StatelessWidget {
       children: [
         Text("email".tr(context),
             style: AppTextStyles.font14RegularThemeColorFixedFontSize(context)),
-        verticalSpacing(20),
+        verticalSpacing(5.h),
         AppTextFormFiled(
           hintText: "enter_email".tr(context),
           hintStyle: AppTextStyles.font12RegularFixedFontSize(context),
           validator: (String? value) {},
         ),
-        verticalSpacing(20),
+        verticalSpacing(10.h),
         Text("password".tr(context),
             style: AppTextStyles.font14RegularThemeColorFixedFontSize(context)),
-        verticalSpacing(20),
+        verticalSpacing(5.h),
         AppTextFormFiled(
           isObscureText: true,
           hintText: "enter_password".tr(context),
           validator: (String? value) {},
           hintStyle: AppTextStyles.font12RegularFixedFontSize(context),
         ),
-        verticalSpacing(50),
+        verticalSpacing(40.h),
         CustomButton(
             onPressed: () {},
             title: "login".tr(context),
@@ -44,7 +45,8 @@ class TabletLoginForm extends StatelessWidget {
         verticalSpacing(40),
         Center(
             child: CustomTextRich(
-              textAuthStyle: AppTextStyles.font16MediumPrimary700FixedFontSize(context),
+                textAuthStyle:
+                    AppTextStyles.font16MediumPrimary700FixedFontSize(context),
                 tittle: "dont_have_an_account".tr(context),
                 textStyle:
                     AppTextStyles.font14RegularThemeColorFixedFontSize(context),

@@ -7,25 +7,7 @@ import 'package:shopzen_admin_dashboard/core/utils/font_weight_manger.dart';
 import '../colors_manger.dart';
 
 class AppTextStyles {
-  static TextStyle font30Bold(BuildContext context) => TextStyle(
-        fontSize: 30.sp,
-        fontWeight: FontWeightManger.bold,
-        color: context.colorThemeExtension.mainColor,
-        fontFamily: FontFamily.getFontFamily(),
-      );
-  static TextStyle font18Bold(BuildContext context) => TextStyle(
-        fontSize: 18.sp,
-        fontWeight: FontWeightManger.medium,
-        color: context.colorThemeExtension.mainColor,
-        fontFamily: FontFamily.getFontFamily(),
-      );
-
-  static TextStyle font20BoldWhiteColor(BuildContext context) => TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeightManger.bold,
-        color: ColorsManger.whiteColor,
-        fontFamily: FontFamily.getFontFamily(),
-      );
+ 
   static TextStyle font16Regular(BuildContext context) => TextStyle(
         fontSize: 16,
         fontWeight: FontWeightManger.regular,
@@ -35,7 +17,7 @@ class AppTextStyles {
         static TextStyle font12RegularFixedFontSize(BuildContext context) => TextStyle(
         fontSize: 12.sp,
         fontWeight: FontWeightManger.regular,
-        color: ColorsManger.gray50,
+        color:  context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
   static TextStyle font16RegularThemeColor(BuildContext context) => TextStyle(
@@ -50,8 +32,8 @@ class AppTextStyles {
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
-  static TextStyle font20Bold(BuildContext context) => TextStyle(
-        fontSize: 24.sp,
+      static TextStyle font19RegularThemeColorFixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 19.sp,
         fontWeight: FontWeightManger.bold,
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
@@ -81,6 +63,12 @@ static TextStyle font16MediumPrimary700FixedFontSize(BuildContext context) => Te
         color: ColorsManger.primaryColor700,
         fontFamily: FontFamily.getFontFamily(),
       );
+      static TextStyle font18BoldPrimary700FixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 18.sp,
+        fontWeight: FontWeightManger.bold,
+        color: ColorsManger.primaryColor700,
+        fontFamily: FontFamily.getFontFamily(),
+      );
   static TextStyle font24Bold(BuildContext context) => TextStyle(
         fontSize: 24,
         fontWeight: FontWeightManger.bold,
@@ -102,7 +90,7 @@ static TextStyle font16MediumPrimary700FixedFontSize(BuildContext context) => Te
         fontFamily: FontFamily.getFontFamily(),
       );
  static TextStyle font16LightFixedFontSize(BuildContext context) => TextStyle(
-        fontSize: 14.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeightManger.light,
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
@@ -116,6 +104,13 @@ static TextStyle font16MediumPrimary700FixedFontSize(BuildContext context) => Te
 
   static TextStyle font20WhiteColorRegular(BuildContext context) => TextStyle(
         fontSize: 20,
+        fontWeight: FontWeightManger.regular,
+        color: ColorsManger.whiteColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+
+       static TextStyle font15WhiteColorRegularFixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 15.sp,
         fontWeight: FontWeightManger.regular,
         color: ColorsManger.whiteColor,
         fontFamily: FontFamily.getFontFamily(),

@@ -24,7 +24,7 @@ class DesktopLoginBody extends StatelessWidget {
               children: [
                 Text(
                   "login_with_email".tr(context),
-                  style: AppTextStyles.font16MediumPrimary700 (context),
+                  style: AppTextStyles.font25MediumPrimary700 (context),
                 ),
                 verticalSpacing(20),
                 Text(

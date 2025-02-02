@@ -8,16 +8,18 @@ class CustomTextRich extends StatelessWidget {
       {super.key,
       required this.tittle,
       required this.authText,
-      required this.routeName});
+      required this.routeName, this.textStyle, this.textAuthStyle});
   final String tittle;
   final String authText;
   final String routeName;
+  final TextStyle? textStyle;
+  final TextStyle? textAuthStyle;
 
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        style: AppTextStyles.font16Medium(context),
+        style:textStyle ?? AppTextStyles.font16Medium(context),
         children: [
           TextSpan(
             text: tittle,
@@ -28,7 +30,7 @@ class CustomTextRich extends StatelessWidget {
                   context.pushNamedAndRemoveUntil(routeName);
                 },
               text: authText,
-              style: AppTextStyles.font16MediumPrimary700(context)),
+              style:textAuthStyle ?? AppTextStyles.font16MediumPrimary700(context)),
         ],
       ),
     );

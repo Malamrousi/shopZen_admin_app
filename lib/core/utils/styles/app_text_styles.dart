@@ -32,8 +32,20 @@ class AppTextStyles {
         color: ColorsManger.gray50,
         fontFamily: FontFamily.getFontFamily(),
       );
+        static TextStyle font12RegularFixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeightManger.regular,
+        color: ColorsManger.gray50,
+        fontFamily: FontFamily.getFontFamily(),
+      );
   static TextStyle font16RegularThemeColor(BuildContext context) => TextStyle(
         fontSize: 16,
+        fontWeight: FontWeightManger.regular,
+        color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+        static TextStyle font14RegularThemeColorFixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
         fontWeight: FontWeightManger.regular,
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
@@ -51,15 +63,33 @@ class AppTextStyles {
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
+       static TextStyle font16MediumFixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeightManger.medium,
+        color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
   static TextStyle font16MediumPrimary700(BuildContext context) => TextStyle(
         fontSize: 16,
         fontWeight: FontWeightManger.medium,
         color: ColorsManger.primaryColor700,
         fontFamily: FontFamily.getFontFamily(),
       );
-
+static TextStyle font16MediumPrimary700FixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightManger.medium,
+        color: ColorsManger.primaryColor700,
+        fontFamily: FontFamily.getFontFamily(),
+      );
   static TextStyle font24Bold(BuildContext context) => TextStyle(
         fontSize: 24,
+        fontWeight: FontWeightManger.bold,
+        color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+
+       static TextStyle font16BoldFixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 16.sp,
         fontWeight: FontWeightManger.bold,
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
@@ -71,7 +101,12 @@ class AppTextStyles {
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
-
+ static TextStyle font16LightFixedFontSize(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightManger.light,
+        color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
   static TextStyle font31Medium(BuildContext context) => TextStyle(
         fontSize: 31,
         fontWeight: FontWeightManger.medium,

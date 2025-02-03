@@ -2,22 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
 import 'package:shopzen_admin_dashboard/core/routes/route_name.dart';
+import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/app_text_form_filed.dart';
-import 'package:shopzen_admin_dashboard/core/widgets/custom_button.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_text_rich.dart';
 
-import '../../../../../core/utils/styles/app_text_styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
 
-class DesktopLoginForm extends StatelessWidget {
-  const DesktopLoginForm({super.key});
+class DesktopSignUpForm extends StatelessWidget {
+  const DesktopSignUpForm({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Form(
         child: Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
       children: [
+          Text("name".tr(context),
+            style: AppTextStyles.font16RegularThemeColor(context)),
+        verticalSpacing(10),
+        AppTextFormFiled(
+          hintText: "enter_name".tr(context),
+          validator: (String? value) {},
+        ),
+                verticalSpacing(20),
         Text("email".tr(context),
             style: AppTextStyles.font16RegularThemeColor(context)),
         verticalSpacing(10),
@@ -35,15 +43,14 @@ class DesktopLoginForm extends StatelessWidget {
           validator: (String? value) {},
         ),
         verticalSpacing(50),
-        CustomButton(onPressed: () {}, title: "login".tr(context)),
+        CustomButton(onPressed: () {}, title: "signup".tr(context)),
         verticalSpacing(20),
         CustomTextRich(
-            tittle: "dont_have_an_account".tr(context),
-            authText: "signup".tr(context),
+            tittle: "have_an_account".tr(context),
+            authText: "login".tr(context),
             routeName: RouteName.signUp),
-                        verticalSpacing(30)
-
+            verticalSpacing(30)
       ],
-    ),);
+    ));
   }
 }

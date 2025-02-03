@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/core/routes/route_name.dart';
 
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/utils/styles/app_text_styles.dart';
@@ -49,7 +50,7 @@ class TabletLoginForm extends StatelessWidget {
                 textStyle:
                     AppTextStyles.font14RegularThemeColorFixedFontSize(context),
                 authText: "signup".tr(context),
-                routeName: ""))
+                routeName:RouteName.signUp))
       ],
     ));
   }

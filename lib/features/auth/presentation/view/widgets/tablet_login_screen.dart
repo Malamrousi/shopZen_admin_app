@@ -16,6 +16,7 @@ class TabletLoginScreen extends StatelessWidget {
           CustomAppBar(),
           verticalSpacing(30),
           TabletLoginBody(),
+          
         ],
       ),
     );

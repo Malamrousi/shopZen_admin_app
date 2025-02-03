@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
 import 'package:shopzen_admin_dashboard/core/helper/theme_extension.dart';
 
-import 'dark_and_lang_buttons.dart';
+import '../dark_and_lang_buttons.dart';
 
 class CustomDesktopAppBar extends StatelessWidget {
   const CustomDesktopAppBar({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/tablet_login_form.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/tablet/tablet_login_form.dart';
 
-import '../../../../../core/utils/styles/app_text_styles.dart';
+import '../../../../../../core/utils/styles/app_text_styles.dart';
 
 class TabletLoginBody extends StatelessWidget {
   const TabletLoginBody({super.key});

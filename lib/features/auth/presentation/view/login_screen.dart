@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop_login_screen.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/mobile_login_screen.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/tablet_login_screen.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop/desktop_login_screen.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/mobile/mobile_login_screen.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/tablet/tablet_login_screen.dart';
 import 'package:shopzen_admin_dashboard/responsive_layout.dart';
 
 class LoginScreen extends StatelessWidget {

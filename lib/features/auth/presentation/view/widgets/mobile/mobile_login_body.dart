@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/mobile_login_form.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/mobile/mobile_login_form.dart';
 
-import '../../../../../core/helper/spacing.dart';
-import '../../../../../core/utils/styles/app_text_styles.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/utils/styles/app_text_styles.dart';
 
 class MobileLoginBody extends StatelessWidget {
   const MobileLoginBody({super.key});

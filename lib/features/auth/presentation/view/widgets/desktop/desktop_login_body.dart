@@ -4,7 +4,7 @@ import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/assets/assets.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
 
-import '../../../../../core/utils/styles/app_text_styles.dart';
+import '../../../../../../core/utils/styles/app_text_styles.dart';
 import 'desktop_login_form.dart';
 
 class DesktopLoginBody extends StatelessWidget {

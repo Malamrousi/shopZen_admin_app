@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_desktop_app_bar.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop/custom_desktop_app_bar.dart';
 
-import '../../../../../core/helper/spacing.dart';
+import '../../../../../../core/helper/spacing.dart';
 import 'desktop_login_body.dart';
 
 class DesktopLoginScreen extends StatelessWidget {

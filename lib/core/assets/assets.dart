@@ -26,6 +26,12 @@ class Assets {
 
   static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";
 
+  static const String imagesSplashScreen = "assets/images/splash_screen.png";
+
+  static const String imagesSplashScreenAndroid12 = "assets/images/splash_screen_android12.png";
+
+  static const String imagesUserAvatar = "assets/images/user_avatar.png";
+
   static const String svgNoNetwork = "assets/svg/no_network.svg";
 
   static const String svgShoppingDesktop = "assets/svg/shopping_desktop.svg";

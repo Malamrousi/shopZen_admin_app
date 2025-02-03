@@ -4,10 +4,10 @@ import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/routes/route_name.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_text_rich.dart';
 
-import '../../../../../core/helper/spacing.dart';
-import '../../../../../core/utils/styles/app_text_styles.dart';
-import '../../../../../core/widgets/app_text_form_filed.dart';
-import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/utils/styles/app_text_styles.dart';
+import '../../../../../../core/widgets/app_text_form_filed.dart';
+import '../../../../../../core/widgets/custom_button.dart';
 
 class MobileLoginForm extends StatelessWidget {
   const MobileLoginForm({super.key});

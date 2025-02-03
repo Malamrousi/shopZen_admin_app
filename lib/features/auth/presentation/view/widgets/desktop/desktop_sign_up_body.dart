@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/assets/assets.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop_sign_up_form.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop/desktop_sign_up_form.dart';
 
-import '../../../../../core/helper/spacing.dart';
-import '../../../../../core/utils/styles/app_text_styles.dart';
+import '../../../../../../core/helper/spacing.dart';
+import '../../../../../../core/utils/styles/app_text_styles.dart';
 
 class DesktopSignUpBody extends StatelessWidget {
   const DesktopSignUpBody({super.key});

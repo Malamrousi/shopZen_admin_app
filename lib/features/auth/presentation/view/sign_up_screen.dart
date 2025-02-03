@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop_sign_up.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/mobile_sign_up_body.dart';
-import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/tablet_sign_up_body.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop/desktop_sign_up.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/mobile/mobile_sign_up_body.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/tablet/tablet_sign_up.dart';
 import 'package:shopzen_admin_dashboard/responsive_layout.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
       body: SafeArea(
         child: ResponsiveLayout(
           mobile: MobileSignUpBody(),
-          tablet: TabletSignUpBody(),
+          tablet: TabletSignUp(),
           desktop: DesktopSignUp(),
         ),
       ),

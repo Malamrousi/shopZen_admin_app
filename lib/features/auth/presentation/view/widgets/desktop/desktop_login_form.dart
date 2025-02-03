@@ -6,7 +6,7 @@ import 'package:shopzen_admin_dashboard/core/widgets/app_text_form_filed.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/custom_button.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_text_rich.dart';
 
-import '../../../../../core/utils/styles/app_text_styles.dart';
+import '../../../../../../core/utils/styles/app_text_styles.dart';
 
 class DesktopLoginForm extends StatelessWidget {
   const DesktopLoginForm({super.key});

@@ -11,12 +11,15 @@ class MobileLoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          CustomAppBar(),
-          verticalSpacing(30.h),
-          MobileLoginBody(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            CustomAppBar(),
+            verticalSpacing(30.h),
+            MobileLoginBody(),
+          ],
+        ),
       ),
     );
   }

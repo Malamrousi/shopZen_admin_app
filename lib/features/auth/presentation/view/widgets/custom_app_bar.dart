@@ -8,18 +8,15 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 20.w),
-      child: Row(children: [
-        Image.asset(
-          context.imageExtension.image ?? "",
-          height: 100.h,
-          width: 100.w,
-        ),
-        Spacer(),
-        DarkAndLangButtons()
-        
-      ],),
-    );
+    return Row(children: [
+      Image.asset(
+        context.imageExtension.image ?? "",
+        height: 100.h,
+        width: 100.w,
+      ),
+      Spacer(),
+      DarkAndLangButtons()
+      
+    ],);
   }
 }

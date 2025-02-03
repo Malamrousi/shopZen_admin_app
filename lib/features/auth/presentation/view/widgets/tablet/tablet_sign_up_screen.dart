@@ -3,8 +3,8 @@ import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_app_bar.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/tablet/tablet_sign_up_body.dart';
 
-class TabletSignUp extends StatelessWidget {
-  const TabletSignUp({super.key});
+class TabletSignUpScreen extends StatelessWidget {
+  const TabletSignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

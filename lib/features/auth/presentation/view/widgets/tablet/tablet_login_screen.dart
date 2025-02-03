@@ -10,14 +10,17 @@ class TabletLoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          verticalSpacing(30),
-          TabletLoginBody(),
-          
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBar(),
+            verticalSpacing(30),
+            TabletLoginBody(),
+            
+          ],
+        ),
       ),
     );
   }

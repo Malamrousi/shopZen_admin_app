@@ -75,8 +75,8 @@ class UserAvatarImage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: -10.h,
-                    right: -5.w,
+                    top: -10,
+                    right: -5,
                     child: isImageUploaded
                         ? IconButton(
                             onPressed: () {
@@ -84,7 +84,7 @@ class UserAvatarImage extends StatelessWidget {
                             },
                             icon: Icon(
                               Icons.delete,
-                              size: 24.sp,
+                              size: 28,
                               color: Colors.red,
                             ),
                             color: ColorsManger.whiteColor,

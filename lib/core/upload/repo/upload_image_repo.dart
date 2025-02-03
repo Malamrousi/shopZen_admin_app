@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:shopzen_admin_dashboard/core/api/api_result.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/di/di.dart';
 import 'package:shopzen_admin_dashboard/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen_admin_dashboard/core/upload/model/upload_image_response.dart';
+import 'dart:typed_data';
 
 class UploadImageRepo {
   final UploadImageDataSource uploadImageDataSource;
@@ -12,7 +12,7 @@ class UploadImageRepo {
   UploadImageRepo({required this.uploadImageDataSource});
 
   Future<ApiResult<UploadImageResponse>> uploadImage(
-      {required XFile file}) async {
+      {required Uint8List file}) async {
     try {
       final response = await uploadImageDataSource.uploadImage(file: file);
       return ApiResult.success(response);

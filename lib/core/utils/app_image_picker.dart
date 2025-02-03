@@ -1,4 +1,6 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
@@ -14,23 +16,40 @@ class AppImagePicker {
     return _instance;
   }
 
-  Future<XFile?> pickImage() async {
+  Future<Uint8List?> pickImage() async {
     try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (kIsWeb) {
+        FilePickerResult? result = await FilePicker.platform.pickFiles(
+          type: FileType.image,
+        );
 
-      if (image != null) {
-        return XFile(image.path);
-      }
-      return null;
-    } catch (e) {
-      final permissionStatus = await Permission.photos.status;
-      if (permissionStatus.isDenied) {
-        await showAlertPermissionDialog();
+        if (result != null) {
+          return result.files.first.bytes;
+        }
       } else {
-        debugPrint("Image Exception======> $e");
+        final ImagePicker picker = ImagePicker();
+
+        final XFile? image =
+            await picker.pickImage(source: ImageSource.gallery);
+
+        if (image != null) {
+          return await image.readAsBytes();
+        }
+      }
+    } catch (e) {
+      if (!kIsWeb) {
+        final permissionStatus = await Permission.photos.status;
+        if (permissionStatus.isDenied) {
+          await showAlertPermissionDialog();
+        } else {
+          debugPrint("Image Picker Exception: $e");
+        }
+      } else {
+        debugPrint("Web Image Picker Error: $e");
       }
     }
     return null;
+  
   }
 
   Future<void> showAlertPermissionDialog() async {

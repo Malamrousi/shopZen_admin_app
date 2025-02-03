@@ -37,10 +37,12 @@ class DesktopLoginForm extends StatelessWidget {
         verticalSpacing(50),
         CustomButton(onPressed: () {}, title: "login".tr(context)),
         verticalSpacing(20),
-        CustomTextRich(
-            tittle: "dont_have_an_account".tr(context),
-            authText: "signup".tr(context),
-            routeName: RouteName.signUp),
+        Center(
+          child: CustomTextRich(
+              tittle: "dont_have_an_account".tr(context),
+              authText: "signup".tr(context),
+              routeName: RouteName.signUp),
+        ),
                         verticalSpacing(30)
 
       ],

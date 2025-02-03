@@ -6,6 +6,7 @@ import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/
 
 import '../../../../../../core/helper/spacing.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
+import '../user_avatar_image.dart';
 
 class DesktopSignUpBody extends StatelessWidget {
   const DesktopSignUpBody({super.key});
@@ -34,6 +35,9 @@ class DesktopSignUpBody extends StatelessWidget {
                   style: AppTextStyles.font25Light(context),
                 ),
                 verticalSpacing(20),
+                 Center(
+            child: UserAvatarImage(),
+          ),
                 DesktopSignUpForm()
             ],
           ),

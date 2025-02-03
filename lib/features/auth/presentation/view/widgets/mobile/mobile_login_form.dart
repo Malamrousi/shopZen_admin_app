@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/routes/route_name.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_text_rich.dart';
 
 import '../../../../../../core/helper/spacing.dart';
@@ -15,6 +17,8 @@ class MobileLoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
+            key: context.read<AuthBloc>().formKey,
+
         child: Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,

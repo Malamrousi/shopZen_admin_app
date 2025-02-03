@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
 import 'package:shopzen_admin_dashboard/core/routes/route_name.dart';
 import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/app_text_form_filed.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/custom_text_rich.dart';
 
 import '../../../../../../core/widgets/custom_button.dart';
@@ -14,6 +16,7 @@ class DesktopSignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: context.read<AuthBloc>().formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,

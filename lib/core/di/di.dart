@@ -7,6 +7,9 @@ import 'package:shopzen_admin_dashboard/core/cubit/upload_image/upload_image_cub
 import 'package:shopzen_admin_dashboard/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen_admin_dashboard/core/upload/repo/upload_image_repo.dart';
 
+import '../../features/auth/data/data_source/auth_data_source.dart';
+import '../../features/auth/data/repo/auth_repo.dart';
+import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import '../api/dio_factory.dart';
 
 final getIt = GetIt.instance;
@@ -31,5 +34,13 @@ Future<void> setupDependencies() async {  final navKey = GlobalKey<NavigatorStat
       //UploadImageCubit
   getIt.registerFactory<UploadImageCubit>(
       () => UploadImageCubit(uploadImageRepo: getIt.get<UploadImageRepo>()));
+
+      getIt.registerLazySingleton<AuthDataSource>(
+      () => AuthDataSource(apiService: getIt.get<ApiService>()));
+  getIt.registerLazySingleton<AuthRepo>(
+      () => AuthRepo(authDataSource: getIt.get<AuthDataSource>()));
+//LoginBloc
+  getIt
+      .registerFactory<AuthBloc>(() => AuthBloc(repo: getIt.get<AuthRepo>()));
 
 }

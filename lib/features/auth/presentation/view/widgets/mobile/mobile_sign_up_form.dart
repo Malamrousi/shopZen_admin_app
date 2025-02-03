@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/routes/route_name.dart';
@@ -7,6 +8,7 @@ import 'package:shopzen_admin_dashboard/core/widgets/app_text_form_filed.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/custom_button.dart';
 
 import '../../../../../../core/helper/spacing.dart';
+import '../../../bloc/auth_bloc/auth_bloc.dart';
 import '../custom_text_rich.dart';
 
 class MobileSignUpForm extends StatelessWidget {
@@ -14,7 +16,10 @@ class MobileSignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(child: Column(
+    return Form(
+            key: context.read<AuthBloc>().formKey,
+
+      child: Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -12,8 +12,9 @@ import 'package:shopzen_admin_dashboard/shop_zen_admin_dashboard.dart';
 
  
 void main() async {
-    await dotenv.load(fileName: ".env"); 
   WidgetsFlutterBinding.ensureInitialized();
+      await dotenv.load(fileName: ".env"); 
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

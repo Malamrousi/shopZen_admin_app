@@ -14,14 +14,30 @@ class Assets {
 
   static const String fontsSatoshiRegular = "assets/fonts/Satoshi-Regular.ttf";
 
+  static const String imagesAppIcon = "assets/images/app_icon.png";
+
+  static const String imagesAppIconCircle = "assets/images/app_icon_circle.png";
+
   static const String imagesEmptyScreen = "assets/images/empty_screen.png";
+
+  static const String imagesLogoDarkTheme = "assets/images/logo_dark_theme.png";
+
+  static const String imagesLogoLightTheme = "assets/images/logo_light_theme.png";
 
   static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";
 
+  static const String imagesSplashScreen = "assets/images/splash_screen.png";
+
+  static const String imagesSplashScreenAndroid12 = "assets/images/splash_screen_android12.png";
+
+  static const String imagesUserAvatar = "assets/images/user_avatar.png";
+
   static const String svgNoNetwork = "assets/svg/no_network.svg";
+
+  static const String svgShoppingDesktop = "assets/svg/shopping_desktop.svg";
 
   static const String translationsArEG = "assets/translations/ar-EG.json";
 
-  static const String translationsEnUS = "assets/translations/en_US.json";
+  static const String translationsEnUS = "assets/translations/en-US.json";
 }
 

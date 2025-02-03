@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:shopzen_admin_dashboard/features/auth/presentation/view/widgets/desktop/custom_desktop_app_bar.dart';
+
+import '../../../../../../core/helper/spacing.dart';
+import 'desktop_login_body.dart';
+
+class DesktopLoginScreen extends StatelessWidget {
+  const DesktopLoginScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomDesktopAppBar(),
+            verticalSpacing(50),
+            DesktopLoginBody()
+          ],
+        ),
+      ),
+    );
+  }
+}

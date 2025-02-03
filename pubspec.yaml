@@ -28,9 +28,11 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animate_do: ^3.3.4
   connectivity_plus: ^5.0.2
   cupertino_icons: ^1.0.8
   dio: ^5.8.0+1
+  file_picker: ^8.3.1
   firebase_core: ^3.10.1
   flutter:
     sdk: flutter
@@ -38,9 +40,11 @@ dependencies:
   flutter_dotenv: ^5.2.1
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.4.4
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
   flutter_svg: ^2.0.17
+  fluttertoast: ^8.2.10
   freezed_annotation: ^2.4.4
   get_it: ^8.0.3
   image_picker: ^1.1.2
@@ -71,9 +75,10 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    #   - images/a_dot_ham.jpeg
     - assets/translations/
     - assets/images/
+    - assets/svg/
+    - .env
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

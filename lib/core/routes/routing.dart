@@ -9,6 +9,8 @@ import 'package:shopzen_admin_dashboard/features/auth/presentation/bloc/auth_blo
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/login_screen.dart';
 import 'package:shopzen_admin_dashboard/features/auth/presentation/view/sign_up_screen.dart';
 
+import '../../features/home/presentation/view/home_screen.dart';
+
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case RouteName.login:
@@ -27,6 +29,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           create: (context) => getIt.get<AuthBloc>(),
         )
       ], child: SignUpScreen()));
+    case RouteName.home:
+      return PageSlideTransition(page: HomeScreen());
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());
   }

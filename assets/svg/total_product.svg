@@ -1,0 +1,10 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- الخلفية الدائرية -->
+    <rect x="0" y="0" width="60" height="60" rx="15" fill="#E0F7FA"/> 
+
+    <!-- أيقونة الفئات (Category) -->
+    <rect x="12" y="12" width="16" height="16" rx="3" fill="#0288D1"/>
+    <rect x="32" y="12" width="16" height="16" rx="3" fill="#03A9F4"/>
+    <rect x="12" y="32" width="16" height="16" rx="3" fill="#03A9F4"/>
+    <rect x="32" y="32" width="16" height="16" rx="3" fill="#0288D1"/>
+</svg>

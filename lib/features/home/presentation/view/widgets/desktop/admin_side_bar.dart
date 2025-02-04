@@ -7,13 +7,15 @@ import '../../../../../../core/helper/spacing.dart';
 import '../../../../data/model/admin_bar_model.dart';
 
 class AdminSideBar extends StatelessWidget {
-  const AdminSideBar({super.key});
+  final int selectedIndex;
+  final Function(int) onItemSelected;
+
+  const AdminSideBar({super.key, required this.selectedIndex, required this.onItemSelected});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-
       mainAxisSize: MainAxisSize.max,
       children: [
         Image.asset(
@@ -24,22 +26,33 @@ class AdminSideBar extends StatelessWidget {
         verticalSpacing(50),
         Column(
           children: [
-            for (var item in adminBarItems)
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Row(
-                  children: [
-                    SvgPicture.asset(item.image),
-                    horizontalSpacing(10),
-                    Text(
-                      item.title,
-                      style: AppTextStyles.font16Medium(context),
-                    )
-                  ],
+            for (var i = 0; i < adminBarItems.length; i++)
+              InkWell(
+                onTap: () {
+                  onItemSelected(i); // تحديث الصفحة عند الضغط
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: BoxDecoration(
+                    color: selectedIndex == i ? Colors.green.shade300 : Colors.transparent,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(adminBarItems[i].image),
+                      horizontalSpacing(10),
+                      Text(
+                        adminBarItems[i].title,
+                        style: AppTextStyles.font16Medium(context).copyWith(
+                          color: selectedIndex == i ? Colors.white : Colors.black,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
           ],
-        )
+        ),
       ],
     );
   }

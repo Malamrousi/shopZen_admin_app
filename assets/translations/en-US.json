@@ -46,5 +46,11 @@
   "notifications":"Notifications",
   "settings":"Settings",
   "logout":"Logout",
-  "customer_service":"Customer Service"
+  "customer_service":"Customer Service",
+  "total_users":"Total Users",
+  "total_products":"Total Products",
+  "total_categories":"Total Categories",
+  "total_orders":"Total Orders",
+  "total_sales":"Total Sales",
+  "total_refunds":"Total Refunds"
 }

@@ -44,6 +44,8 @@ class Assets {
 
   static const String svgDashboardLightTheme = "assets/svg/dashboard_light_theme.svg";
 
+  static const String svgDeliveryBox01 = "assets/svg/delivery-box-01.svg";
+
   static const String svgLogOutDarkTheme = "assets/svg/log_out_dark_theme.svg";
 
   static const String svgLogOutLightTheme = "assets/svg/log_out_light_theme.svg";
@@ -63,6 +65,14 @@ class Assets {
   static const String svgSettingsLightTheme = "assets/svg/settings_light_theme.svg";
 
   static const String svgShoppingDesktop = "assets/svg/shopping_desktop.svg";
+
+  static const String svgTotalCategory = "assets/svg/total_category.svg";
+
+  static const String svgTotalProduct = "assets/svg/total_product.svg";
+
+  static const String svgTotalSales = "assets/svg/total_sales.svg";
+
+  static const String svgTotalUsers = "assets/svg/total_users.svg";
 
   static const String svgUserDarkTheme = "assets/svg/user_dark_theme.svg";
 

@@ -9,6 +9,7 @@ import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
 import 'package:shopzen_admin_dashboard/core/utils/styles/app_theme.dart';
 
 import 'core/app/app_localizations.dart';
+import 'core/app/app_scroll_behavior.dart';
 import 'core/cubit/app_cubit/app_cubit.dart';
 import 'core/di/di.dart';
 import 'core/screens/no_network_screen.dart';
@@ -31,6 +32,7 @@ class ShopZenAdminDashboard extends StatelessWidget {
               ..getSavedLanguage(),
             child: ScreenUtilInit(
               minTextAdapt: true,
+              splitScreenMode: true,
               child: BlocBuilder<AppCubit, AppState>(
                 buildWhen: (previous, current) {
                   return previous != current;
@@ -48,23 +50,25 @@ class ShopZenAdminDashboard extends StatelessWidget {
                       GlobalWidgetsLocalizations.delegate,
                       GlobalCupertinoLocalizations.delegate,
                     ],
-        
-                    
+                    scrollBehavior: MyCustomScrollBehavior(),
+
                     navigatorKey: getIt.get<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: generateRoute,
-                    initialRoute:  SharedPref().getString(PrefKeys.isLogin) == "true"
-                            ? RouteName.home
-                            : RouteName.login,
+                    // initialRoute:  SharedPref().getString(PrefKeys.isLogin) == "true"
+                    initialRoute: RouteName.home,
+                    // : RouteName.login,
                     localeResolutionCallback: (deviceLocale, supportedLocales) {
                       if (deviceLocale != null) {
                         for (var locale in supportedLocales) {
-                          if (deviceLocale.languageCode == locale.languageCode &&
+                          if (deviceLocale.languageCode ==
+                                  locale.languageCode &&
                               deviceLocale.countryCode == locale.countryCode) {
                             return locale;
                           }
                         }
                         for (var locale in supportedLocales) {
-                          if (deviceLocale.languageCode == locale.languageCode) {
+                          if (deviceLocale.languageCode ==
+                              locale.languageCode) {
                             return locale;
                           }
                         }

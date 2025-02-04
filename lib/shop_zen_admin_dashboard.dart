@@ -52,7 +52,9 @@ class ShopZenAdminDashboard extends StatelessWidget {
                     
                     navigatorKey: getIt.get<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: generateRoute,
-                    initialRoute: RouteName.login,
+                    initialRoute:  SharedPref().getString(PrefKeys.isLogin) == "true"
+                            ? RouteName.home
+                            : RouteName.login,
                     localeResolutionCallback: (deviceLocale, supportedLocales) {
                       if (deviceLocale != null) {
                         for (var locale in supportedLocales) {

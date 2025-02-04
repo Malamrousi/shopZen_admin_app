@@ -10,10 +10,10 @@ import 'package:shopzen_admin_dashboard/core/shared_pref/shared_pref.dart';
 import 'package:shopzen_admin_dashboard/firebase_options.dart';
 import 'package:shopzen_admin_dashboard/shop_zen_admin_dashboard.dart';
 
- 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-      await dotenv.load(fileName: ".env"); 
+  await dotenv.load(fileName: ".env");
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -21,14 +21,16 @@ void main() async {
   await SharedPref().instantiatePreferences();
 
   await SecureStorageService().instantiateSecureStorage();
- 
+
   Bloc.observer = AppBlocObserver();
+
 
   setupDependencies();
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
   ).then((_) {
-    runApp(const ShopZenAdminDashboard());
+    runApp( ShopZenAdminDashboard(
+
+    ));
   });
 }
-

@@ -92,8 +92,8 @@ class _TabletLoginFormState extends State<TabletLoginForm> {
             ),
             verticalSpacing(50),
             CustomLoginButton(
-              textStyle: AppTextStyles.font15WhiteColorRegularFixedFontSize(context)
-            ),
+                textStyle: AppTextStyles.font15WhiteColorRegularFixedFontSize(
+                    context)),
             verticalSpacing(40),
             Center(
                 child: CustomTextRich(

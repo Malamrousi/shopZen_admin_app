@@ -14,7 +14,8 @@ import '../api/dio_factory.dart';
 
 final getIt = GetIt.instance;
 
-Future<void> setupDependencies() async {  final navKey = GlobalKey<NavigatorState>();
+Future<void> setupDependencies() async { 
+   final navKey = GlobalKey<NavigatorState>();
   final sharedPreferences = await SharedPreferences.getInstance();
     final dio = DioFactory.getDio();
 

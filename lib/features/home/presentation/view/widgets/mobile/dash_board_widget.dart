@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopzen_admin_dashboard/core/assets/assets.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
 
+import '../../../../../../core/assets/assets.dart';
 import '../custom_container_performance_summary.dart';
 
-class PerformanceSummary extends StatelessWidget {
-  const PerformanceSummary({super.key});
+class DashBoardWidget extends StatelessWidget {
+  const DashBoardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  RefreshIndicator(
+    return RefreshIndicator(
       onRefresh: () async {},
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        child: Row(
+        child: ListView(
           
           children: [
             CustomContainerPerformanceSummary(

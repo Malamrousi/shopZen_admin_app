@@ -1,5 +1,6 @@
 {
     "shop_zen": "متجر زين",
+    "shop_zen_admin": "لوحة التحكم في متجر زين",
     "login": "تسجيل الدخول",
     "email": "البريد الالكتروني",
     "password": "كلمة المرور",
@@ -18,7 +19,7 @@
     "have_an_account": " لديك حساب؟",
      "signup": "انشاء حساب",
      "sign_up_with_email": "انشاء حساب بالبريد الالكتروني",
-
+  
    "please_enter_email": "يرجى إدخال البريد الإلكتروني",
     "please_enter_password": "يرجى إدخال كلمة المرور",
     "please_enter_valid_email": "يرجى إدخال بريد إلكتروني صالح",
@@ -55,4 +56,5 @@
     "total_sales": "عدد المبيعات",
     "total_refunds": "عدد المرتجعات",
     "total_revenue": "الايربان"
+    
 }

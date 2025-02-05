@@ -46,7 +46,7 @@ class AppTextStyles {
         fontFamily: FontFamily.getFontFamily(),
       );
        static TextStyle font16MediumFixedFontSize(BuildContext context) => TextStyle(
-        fontSize: 16,
+        fontSize: 16.sp,
         fontWeight: FontWeightManger.medium,
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),

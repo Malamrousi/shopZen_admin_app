@@ -9,10 +9,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SafeArea(
-          child: ResponsiveLayout(
-              mobile: MobileHomeScreen(), tablet: TabletHomeScreen(), desktop: DesktopHomeScreen())),
+        child: ResponsiveLayout(
+          mobile: MobileHomeScreen(),
+          tablet: TabletHomeScreen(),
+          desktop: DesktopHomeScreen(),
+        ),
+      ),
     );
   }
 }

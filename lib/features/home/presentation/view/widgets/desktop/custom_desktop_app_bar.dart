@@ -14,7 +14,7 @@ class CustomDesktopAppBar extends StatelessWidget {
       child: Row(
         children: [
           
-          Image.asset(context.imageExtension.image??"",
+          Image.asset(context.imageExtension.images["logo"]??"",
             height: 120,
             width: 120,),
           Spacer(),

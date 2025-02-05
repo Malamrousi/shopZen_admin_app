@@ -1,59 +1,53 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
-import 'package:shopzen_admin_dashboard/core/assets/assets.dart';
 import 'package:shopzen_admin_dashboard/core/di/di.dart';
+import 'package:shopzen_admin_dashboard/core/helper/theme_extension.dart';
 import 'package:shopzen_admin_dashboard/core/shared_pref/shared_pref.dart';
 import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
 
 class AdminBarModel {
   final String title;
-  final String image;
+  final String Function(BuildContext) imageGetter;
+
   AdminBarModel({
     required this.title,
-    required this.image,
+    required this.imageGetter,
   });
+
+  String getImage(BuildContext context) => imageGetter(context);
 }
+
 
 bool isDarkMode = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
 BuildContext? context = getIt<GlobalKey<NavigatorState>>().currentContext;
+  final images = context!.imageExtension.images;
 
-List<AdminBarModel> adminBarItems = [
+
+
+List<AdminBarModel> getAdminBarItems = [
   AdminBarModel(
       title: "dashboard".tr(context!),
-      image: isDarkMode
-          ? Assets.svgDashboardDarkTheme
-          : Assets.svgDashboardLightTheme),
+      imageGetter: (context) => images["dashboard"] ?? ""),
   AdminBarModel(
       title: "products".tr(context!),
-      image: isDarkMode
-          ? Assets.svgProductDarkTheme
-          : Assets.svgProductLightTheme),
+      imageGetter: (context) => images["products"] ?? ""),
   AdminBarModel(
       title: "categories".tr(context!),
-      image: isDarkMode
-          ? Assets.svgCategoryDarkTheme
-          : Assets.svgCategoryLightTheme),
+      imageGetter: (context) => images["categories"] ?? ""),
   AdminBarModel(
       title: "users".tr(context!),
-      image: isDarkMode ? Assets.svgUserDarkTheme : Assets.svgUserLightTheme),
+      imageGetter: (context) => images["users"] ?? ""),
   AdminBarModel(
       title: "notifications".tr(context!),
-      image: isDarkMode
-          ? Assets.svgNotificationDarkTheme
-          : Assets.svgNotificationLightTheme),
+      imageGetter: (context) => images["notifications"] ?? ""),
   AdminBarModel(
       title: "settings".tr(context!),
-      image: isDarkMode
-          ? Assets.svgSettingsDarkTheme
-          : Assets.svgSettingsLightTheme),
+      imageGetter: (context) => images["settings"] ?? ""),
   AdminBarModel(
       title: "customer_service".tr(context!),
-      image: isDarkMode
-          ? Assets.svgCustomerServiceDarkTheme
-          : Assets.svgCustomerServiceLightTheme),
+      imageGetter: (context) => images["customer_service"] ?? ""),
   AdminBarModel(
       title: "logout".tr(context!),
-      image:
-          isDarkMode ? Assets.svgLogOutDarkTheme : Assets.svgLogOutLightTheme),
+      imageGetter: (context) => images["logout"] ?? ""),
 ];

@@ -1,28 +1,53 @@
 import 'package:flutter/material.dart';
-import '../desktop/custom_dashboard_widget.dart';
-class TabletHomeScreen extends StatelessWidget {
-  const TabletHomeScreen({super.key, required this.selectedIndex});
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
+import 'package:shopzen_admin_dashboard/core/widgets/custom_drawer.dart';
+import 'package:shopzen_admin_dashboard/features/home/presentation/view/widgets/mobile/dash_board_widget.dart';
+import '../../../../../../core/shared_pref/shared_pref.dart';
+import '../../../../../../core/utils/colors_manger.dart';
+class TabletHomeScreen extends StatefulWidget {
+  const TabletHomeScreen({super.key});
 
-  final int selectedIndex;
 
   @override
-  Widget build(BuildContext context) {
-    List<Widget> pages = [
-      CustomDashboardWidget(),
-      Container(color: Colors.red, child: Center(child: Text("Products"))),
-      Container(color: Colors.orange, child: Center(child: Text("Categories"))),
-      Container(color: Colors.purple, child: Center(child: Text("Users"))),
-      Container(
-          color: Colors.yellow, child: Center(child: Text("Notifications"))),
-      Container(color: Colors.cyan, child: Center(child: Text("Settings"))),
-      Container(
-          color: Colors.teal, child: Center(child: Text("Customer Service"))),
-      Container(
-          color: Colors.black,
-          child: Center(
-              child: Text("Logout", style: TextStyle(color: Colors.white)))),
-    ];
+  State<TabletHomeScreen> createState() => _TabletHomeScreenState();
+}
 
-    return pages[selectedIndex];
+class _TabletHomeScreenState extends State<TabletHomeScreen> {
+    int _selectedIndex = 0;
+
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
+
+  void _onItemSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+  return  Scaffold(
+      key: _scaffoldKey,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor:
+            isDark ? ColorsManger.blackColor : ColorsManger.whiteColor,
+        leading: IconButton(
+          icon: Icon(
+            Icons.menu,
+            size: 23.sp,
+            color: isDark ? ColorsManger.whiteColor : ColorsManger.blackColor,
+          ),
+          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
+        ),
+      ),
+      drawer: CustomDrawerWidget(
+        selectedIndex: _selectedIndex,
+        onItemSelected: _onItemSelected,
+      ),
+      body:DashBoardWidget(),
+    );
   }
 }
+

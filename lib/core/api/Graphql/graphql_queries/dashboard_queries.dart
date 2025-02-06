@@ -8,40 +8,37 @@ class DashboardQueries {
 
   Map<String, dynamic> getAllProductNumber() {
     return {
-      "query": r'''
-  
-     products{
-		
+      'query': '''
+            {
+            products{
               title
-
-      }
-  '''
+            }
+          }
+      ''',
     };
   }
 
   Map<String, dynamic> getAllCategoryNumber() {
     return {
-      "query": r'''
-  
-     categories{
-		
-		name
-		
-  }
-  '''
+      'query': '''
+            {
+            categories{
+              name
+            }
+          }
+      ''',
     };
   }
 
   Map<String, dynamic> getAllUsersNumber() {
     return {
-      "query": r'''
-  
-    users{
-		
-		name
-		
-  }
-  '''
+      'query': '''
+            {
+            users{
+              name
+            }
+          }
+      ''',
     };
   }
 }

@@ -14,15 +14,30 @@ class ProductNumberBloc extends Bloc<ProductNumberEvent, ProductNumberState> {
 
   final DashboardRepo dashboardRepo;
 
-  FutureOr<void> productEvent(
-      ProductNumberEvent event, Emitter<ProductNumberState> emit) async {
+FutureOr<void> productEvent(
+    ProductNumberEvent event, 
+    Emitter<ProductNumberState> emit
+) async {
+  try {
     emit(ProductNumberState.loading());
+    print("Loading state emitted"); // Debug print
+    
     final response = await dashboardRepo.numberOfProducts();
-
-    response.when(success: (success) {
-      emit(ProductNumberState.success(productNumber: success.getProductNumber));
-    }, failure: (failure) {
-      emit(ProductNumberState.failure(message: failure));
-    });
+    print("Response received: $response"); // Debug print
+    
+    response.when(
+      success: (success) {
+        print("Success: ${success.getProductNumber}"); // Debug print
+        emit(ProductNumberState.success(productNumber: success.getProductNumber));
+      }, 
+      failure: (failure) {
+        print("Failure: $failure"); // Debug print
+        emit(ProductNumberState.failure(message: failure));
+      }
+    );
+  } catch (e) {
+    print("Exception caught: $e"); // Debug print
+    emit(ProductNumberState.failure(message: e.toString()));
   }
+}
 }

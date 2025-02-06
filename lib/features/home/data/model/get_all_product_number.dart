@@ -1,9 +1,11 @@
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'get_all_product_number.g.dart';
 
 @JsonSerializable()
 class GetAllProductNumberResponse {
-  final GetAllProductNumber data;
+  final GetAllProductNumber? data;
+  
   GetAllProductNumberResponse({
     required this.data,
   });
@@ -12,18 +14,15 @@ class GetAllProductNumberResponse {
       _$GetAllProductNumberResponseFromJson(json);
 
   String get getProductNumber {
-    if (data.productList.isEmpty) {
-      return "0";
-    }
-
-    return data.productList.length.toString();
+    return data?.productList?.length.toString() ?? "0";
   }
 }
 
 @JsonSerializable()
 class GetAllProductNumber {
-  @JsonKey(name: "product")
-  final List<GetAllProductNumberModel> productList;
+  @JsonKey(name: "products") 
+  final List<GetAllProductNumberModel>? productList;
+  
   GetAllProductNumber({
     required this.productList,
   });
@@ -35,6 +34,7 @@ class GetAllProductNumber {
 @JsonSerializable()
 class GetAllProductNumberModel {
   final String? title;
+  
   GetAllProductNumberModel({
     this.title,
   });

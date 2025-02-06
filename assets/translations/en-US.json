@@ -53,5 +53,6 @@
   "total_categories":"Total Categories",
   "total_orders":"Total Orders",
   "total_sales":"Total Sales",
-  "total_refunds":"Total Refunds"
+  "total_refunds":"Total Refunds",
+  "error":"Error"
 }

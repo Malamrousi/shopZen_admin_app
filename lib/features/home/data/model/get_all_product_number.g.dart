@@ -9,7 +9,9 @@ part of 'get_all_product_number.dart';
 GetAllProductNumberResponse _$GetAllProductNumberResponseFromJson(
         Map<String, dynamic> json) =>
     GetAllProductNumberResponse(
-      data: GetAllProductNumber.fromJson(json['data'] as Map<String, dynamic>),
+      data: json['data'] == null
+          ? null
+          : GetAllProductNumber.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$GetAllProductNumberResponseToJson(
@@ -20,8 +22,8 @@ Map<String, dynamic> _$GetAllProductNumberResponseToJson(
 
 GetAllProductNumber _$GetAllProductNumberFromJson(Map<String, dynamic> json) =>
     GetAllProductNumber(
-      productList: (json['product'] as List<dynamic>)
-          .map((e) =>
+      productList: (json['products'] as List<dynamic>?)
+          ?.map((e) =>
               GetAllProductNumberModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -29,7 +31,7 @@ GetAllProductNumber _$GetAllProductNumberFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$GetAllProductNumberToJson(
         GetAllProductNumber instance) =>
     <String, dynamic>{
-      'product': instance.productList,
+      'products': instance.productList,
     };
 
 GetAllProductNumberModel _$GetAllProductNumberModelFromJson(

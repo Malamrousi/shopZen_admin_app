@@ -55,6 +55,7 @@
     "total_orders": "عدد الطلبات",
     "total_sales": "عدد المبيعات",
     "total_refunds": "عدد المرتجعات",
-    "total_revenue": "الايربان"
+    "total_revenue": "الايربان",
+    "error": "خطأ"
     
 }

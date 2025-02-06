@@ -6,6 +6,7 @@ import 'package:shopzen_admin_dashboard/features/home/presentation/view/widgets/
 import 'package:shopzen_admin_dashboard/features/home/presentation/view/widgets/mobile/mobile_home_screen.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/view/widgets/tablet/tablet_home_screen.dart';
 import 'package:shopzen_admin_dashboard/responsive_layout.dart';
+import '../../../../core/routes/route_name.dart';
 import '../../../../core/shared_pref/shared_pref.dart';
 import '../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../core/utils/colors_manger.dart';
@@ -64,8 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedIndex: _selectedIndex,
       ),
     );
-  }
 
+    
+  }
+ 
   Widget _buildTabletLayout() {
     return Scaffold(
         key: _scaffoldKey,

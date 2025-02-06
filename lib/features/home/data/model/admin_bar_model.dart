@@ -18,12 +18,9 @@ class AdminBarModel {
   String getImage(BuildContext context) => imageGetter(context);
 }
 
-
 bool isDarkMode = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
 BuildContext? context = getIt<GlobalKey<NavigatorState>>().currentContext;
-  final images = context!.imageExtension.images;
-
-
+final images = context!.imageExtension.images;
 
 List<AdminBarModel> getAdminBarItems = [
   AdminBarModel(

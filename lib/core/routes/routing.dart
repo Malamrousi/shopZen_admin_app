@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopzen_admin_dashboard/core/cubit/upload_image/upload_image_cubit.dart';
 import 'package:shopzen_admin_dashboard/core/di/di.dart';
+import 'package:shopzen_admin_dashboard/core/routes/page_fade_transition.dart';
 import 'package:shopzen_admin_dashboard/core/routes/page_slide_transition.dart';
 import 'package:shopzen_admin_dashboard/core/routes/route_name.dart';
 import 'package:shopzen_admin_dashboard/core/screens/under_build_screen.dart';
@@ -39,7 +40,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         )
       ], child: SignUpScreen()));
     case RouteName.home:
-      return PageSlideTransition(
+      return PageFadeTransition(
         page: MultiBlocProvider(
           providers: [
             BlocProvider(
@@ -65,27 +66,27 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         ),
       );
     case RouteName.categories:
-      return PageSlideTransition(
+      return PageFadeTransition(
         page: CategoryScreen(),
       );
     case RouteName.products:
-      return PageSlideTransition(
+      return PageFadeTransition(
         page: ProductScreen(),
       );
     case RouteName.users:
-      return PageSlideTransition(
+      return PageFadeTransition(
         page: UsersScreen(),
       );
     case RouteName.notifications:
-      return PageSlideTransition(
+      return PageFadeTransition(
         page: NotificationsScreen(),
       );
     case RouteName.settings:
-      return PageSlideTransition(
+      return PageFadeTransition(
         page: SettingsScreen(),
       );
     case RouteName.customerService:
-      return PageSlideTransition(
+      return PageFadeTransition(
         page: CustomerServicesScreen(),
       );
     default:

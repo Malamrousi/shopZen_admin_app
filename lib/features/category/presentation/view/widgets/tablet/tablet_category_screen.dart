@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
+import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
 
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/utils/colors_manger.dart';
-import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
-import 'dash_board_widget.dart';
 
-class MobileHomeScreen extends StatefulWidget {
-  const MobileHomeScreen({super.key});
+class TabletCategoryScreen extends StatefulWidget {
+  const TabletCategoryScreen({super.key});
 
   @override
-  State<MobileHomeScreen> createState() => _MobileHomeScreenState();
+  State<TabletCategoryScreen> createState() => _TabletCategoryScreenState();
 }
 
-class _MobileHomeScreenState extends State<MobileHomeScreen> {
-  int _selectedIndex = 0;
+class _TabletCategoryScreenState extends State<TabletCategoryScreen> {
+  int _selectedIndex = 2;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -30,8 +29,6 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -50,11 +47,11 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
         ),
       ),
       drawer: CustomDrawerWidget(
-      onItemSelected: _onItemSelected,
-      selectedIndex: _selectedIndex,
+        onItemSelected: _onItemSelected,
+        selectedIndex: _selectedIndex,
       ),
-      body: DashBoardWidget(
-      
+      body: Center(
+        child: Text("Category Mobile"),
       ),
     );
   }

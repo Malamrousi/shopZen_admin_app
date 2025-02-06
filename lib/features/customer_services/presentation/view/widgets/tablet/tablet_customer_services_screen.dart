@@ -6,32 +6,27 @@ import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
-import 'dash_board_widget.dart';
 
-class MobileHomeScreen extends StatefulWidget {
-  const MobileHomeScreen({super.key});
+class TabletCustomerServicesScreen extends StatefulWidget {
+  const TabletCustomerServicesScreen({super.key});
 
   @override
-  State<MobileHomeScreen> createState() => _MobileHomeScreenState();
+  State<TabletCustomerServicesScreen> createState() => _TabletCustomerServicesScreenState();
 }
 
-class _MobileHomeScreenState extends State<MobileHomeScreen> {
-  int _selectedIndex = 0;
+class _TabletCustomerServicesScreenState extends State<TabletCustomerServicesScreen> {
 
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
-
-  void _onItemSelected(int index) {
+          void _onItemSelected(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
+    int selectedIndex = 6;
+      final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -51,11 +46,9 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
       ),
       drawer: CustomDrawerWidget(
       onItemSelected: _onItemSelected,
-      selectedIndex: _selectedIndex,
+      selectedIndex: selectedIndex,
       ),
-      body: DashBoardWidget(
-      
-      ),
+      body: Center(child: Text("customer_services Mobile"),),
     );
   }
 }

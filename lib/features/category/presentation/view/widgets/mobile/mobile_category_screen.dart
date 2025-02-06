@@ -6,17 +6,16 @@ import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
-import 'dash_board_widget.dart';
 
-class MobileHomeScreen extends StatefulWidget {
-  const MobileHomeScreen({super.key});
+class MobileCategoryScreen extends StatefulWidget {
+  const MobileCategoryScreen({super.key});
 
   @override
-  State<MobileHomeScreen> createState() => _MobileHomeScreenState();
+  State<MobileCategoryScreen> createState() => _MobileCategoryScreenState();
 }
 
-class _MobileHomeScreenState extends State<MobileHomeScreen> {
-  int _selectedIndex = 0;
+class _MobileCategoryScreenState extends State<MobileCategoryScreen> {
+    int _selectedIndex = 2;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -30,8 +29,6 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -53,9 +50,7 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
       onItemSelected: _onItemSelected,
       selectedIndex: _selectedIndex,
       ),
-      body: DashBoardWidget(
-      
-      ),
+      body: Center(child: Text("Category Mobile"),),
     );
   }
 }

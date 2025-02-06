@@ -1,42 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
-import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
+import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
 
 import '../../../../../../core/shared_pref/shared_pref.dart';
+import '../../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../../core/utils/colors_manger.dart';
-import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
-import 'dash_board_widget.dart';
-
-class MobileHomeScreen extends StatefulWidget {
-  const MobileHomeScreen({super.key});
+class TabletProductScreen extends StatefulWidget {
+  const TabletProductScreen({super.key});
 
   @override
-  State<MobileHomeScreen> createState() => _MobileHomeScreenState();
+  State<TabletProductScreen> createState() => _TabletProductScreenState();
 }
 
-class _MobileHomeScreenState extends State<MobileHomeScreen> {
-  int _selectedIndex = 0;
-
+class _TabletProductScreenState extends State<TabletProductScreen> {
+  int selectedIndex = 1;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
 
   void _onItemSelected(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 
+  bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
+
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor:
-            isDark ? ColorsManger.blackColor : ColorsManger.whiteColor,
+        backgroundColor: isDark ? ColorsManger.blackColor : ColorsManger.whiteColor,
         title: Text(
           "shop_zen_admin".tr(context),
           style: AppTextStyles.font16BoldFixedFontSize(context),
@@ -50,11 +44,14 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
         ),
       ),
       drawer: CustomDrawerWidget(
-      onItemSelected: _onItemSelected,
-      selectedIndex: _selectedIndex,
+        selectedIndex: selectedIndex,
+        onItemSelected: _onItemSelected,
       ),
-      body: DashBoardWidget(
-      
+      body: Center(
+        child: Text(
+          "إدارة المنتجات - Tablet",
+          style: AppTextStyles.font16Medium(context),
+        ),
       ),
     );
   }

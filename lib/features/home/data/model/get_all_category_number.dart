@@ -12,7 +12,7 @@ class GetAllCategoryNumberResponse {
   factory GetAllCategoryNumberResponse.fromJson(Map<String, dynamic> json) =>
       _$GetAllCategoryNumberResponseFromJson(json);
 
-      String get allCategory{
+      String get allCategoryNumber{
         if(data!.category!.isEmpty){
           return "0";
         }

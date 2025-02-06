@@ -15,7 +15,7 @@ class GetAllUserNumberResponse {
   factory GetAllUserNumberResponse.fromJson(Map<String, dynamic> json) =>
       _$GetAllUserNumberResponseFromJson(json);
 
-  String get allUser {
+  String get allUserNumber {
     if (getAllUserNumber!.getAllUserNumberModel!.isEmpty) {
       return "0";
     }

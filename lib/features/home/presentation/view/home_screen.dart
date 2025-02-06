@@ -70,11 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          
           centerTitle: true,
           backgroundColor:
               isDark ? ColorsManger.blackColor : ColorsManger.whiteColor,
-        
           leading: IconButton(
             icon: Icon(
               Icons.menu,

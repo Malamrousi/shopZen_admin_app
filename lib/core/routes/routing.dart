@@ -38,7 +38,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         BlocProvider(
           create: (context) => getIt.get<AuthBloc>(),
         )
-      ], child: SignUpScreen()));
+      ], child: SignUpScreen())); 
     case RouteName.home:
       return PageFadeTransition(
         page: MultiBlocProvider(

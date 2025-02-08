@@ -16,7 +16,7 @@ class AppTextFormFiled extends StatelessWidget {
       this.suffixIcon,
       this.fillColor,
       this.controller,
-      required this.validator});
+      required this.validator, });
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;

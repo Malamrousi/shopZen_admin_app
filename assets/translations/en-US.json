@@ -54,5 +54,13 @@
   "total_orders":"Total Orders",
   "total_sales":"Total Sales",
   "total_refunds":"Total Refunds",
-  "error":"Error"
+  "error":"Error",
+  "search_for_users":"search for users",
+  "search_for_products":"search for products",
+  "search_for_categories":"search for categories",
+  "delete":"Delete",
+  "edit":"Edit",
+  "add":"Add",
+  "image":"Image"
+  
 }

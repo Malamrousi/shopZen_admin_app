@@ -1,11 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'dart:math';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/core/widgets/app_text_form_filed.dart';
+
+import '../../../../../../core/helper/spacing.dart';
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
+import '../user_table.dart';
 
 
 class TabletUsersScreen extends StatefulWidget {
@@ -34,7 +40,7 @@ class _TabletUsersScreenState extends State<TabletUsersScreen> {
       appBar: AppBar(
         backgroundColor: isDark ? ColorsManger.blackColor : ColorsManger.whiteColor,
         title: Text(
-          "shop_zen_admin".tr(context),
+          "users".tr(context),
           style: AppTextStyles.font16BoldFixedFontSize(context),
         ),
         leading: IconButton(
@@ -49,10 +55,29 @@ class _TabletUsersScreenState extends State<TabletUsersScreen> {
         selectedIndex: selectedIndex,
         onItemSelected: _onItemSelected,
       ),
-      body: Center(
-        child: Text(
-          "إدارة المستخدمين - Tablet",
-          style: AppTextStyles.font16Medium(context),
+      body:Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 10.w),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              AppTextFormFiled(
+                validator: (value) {},
+                hintText: "search_for_users".tr(context),
+                suffixIcon: const Icon(Icons.search),
+                hintStyle: AppTextStyles.font16Medium(context),
+              ),
+              verticalSpacing(10.h),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: SizedBox(
+                  child: SizedBox(
+                    width: max(MediaQuery.of(context).size.width, 600.w),
+                    child: UserTable(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

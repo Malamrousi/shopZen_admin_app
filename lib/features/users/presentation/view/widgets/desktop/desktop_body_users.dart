@@ -1,11 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/shared_pref/shared_prefs_key.dart';
-import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
+import 'display_user_body.dart';
 
 class DesktopBodyUsers extends StatefulWidget {
   const DesktopBodyUsers({super.key});
@@ -15,7 +13,7 @@ class DesktopBodyUsers extends StatefulWidget {
 }
 
 class _DesktopBodyUsersState extends State<DesktopBodyUsers> {
-  int selectedIndex = 3; // 🆕 تأكد من أن رقم المستخدمين هو نفس موقعه في القائمة الجانبية
+  int selectedIndex = 3;
 
   void _onItemSelected(int index) {
     setState(() {
@@ -36,15 +34,7 @@ class _DesktopBodyUsersState extends State<DesktopBodyUsers> {
             onItemSelected: _onItemSelected,
           ),
         ),
-        Expanded(
-          flex: 4,
-          child: Center(
-            child: Text(
-              "إدارة المستخدمين - Desktop",
-              style: AppTextStyles.font16Medium(context),
-            ),
-          ),
-        )
+        Expanded(flex: 4, child: DisplayUserBody())
       ],
     );
   }

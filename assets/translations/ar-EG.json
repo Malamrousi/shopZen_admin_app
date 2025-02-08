@@ -56,6 +56,12 @@
     "total_sales": "عدد المبيعات",
     "total_refunds": "عدد المرتجعات",
     "total_revenue": "الايربان",
-    "error": "خطأ"
+    "error": "خطأ",
+    "search_for_users": "ابحث عن المستخدمين",
+    "search_for_products": "ابحث عن المنتجات",
+    "search_for_categories": "ابحث عن التصنيفات",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "image": "صورة المستخدمين"
     
 }

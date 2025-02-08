@@ -14,6 +14,13 @@ class AppTextStyles {
         color: ColorsManger.gray50,
         fontFamily: FontFamily.getFontFamily(),
       );
+       static TextStyle font20Regular(BuildContext context) => TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeightManger.regular,
+        color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+
         static TextStyle font12RegularFixedFontSize(BuildContext context) => TextStyle(
         fontSize: 12.sp,
         fontWeight: FontWeightManger.regular,
@@ -46,7 +53,7 @@ class AppTextStyles {
         fontFamily: FontFamily.getFontFamily(),
       );
        static TextStyle font16MediumFixedFontSize(BuildContext context) => TextStyle(
-        fontSize: 16,
+        fontSize: 16.sp,
         fontWeight: FontWeightManger.medium,
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),

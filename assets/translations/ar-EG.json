@@ -1,5 +1,6 @@
 {
     "shop_zen": "متجر زين",
+    "shop_zen_admin": "لوحة التحكم في متجر زين",
     "login": "تسجيل الدخول",
     "email": "البريد الالكتروني",
     "password": "كلمة المرور",
@@ -18,7 +19,7 @@
     "have_an_account": " لديك حساب؟",
      "signup": "انشاء حساب",
      "sign_up_with_email": "انشاء حساب بالبريد الالكتروني",
-
+  
    "please_enter_email": "يرجى إدخال البريد الإلكتروني",
     "please_enter_password": "يرجى إدخال كلمة المرور",
     "please_enter_valid_email": "يرجى إدخال بريد إلكتروني صالح",
@@ -40,9 +41,21 @@
     "please_enter_valid_name": "يرجى إدخال اسم بشكل صحيح",
     "please_upload_image": "يرجى تحميل الصورة",
     "sign_up_successfully": "تم التسجيل بنجاح",
-    "what_is_your_location": "ما هو موقعك؟",
-    "we_need_your_location": "نحن نحتاج لموقعك لتقديم اقرب الخدمات",
-    "allow_location": "السماح للوصول للموقع",
-    "save_location": "حفظ الموقع",
-    "please_allow_location": "يرجى السماح للوصول للموقع"
+    "dashboard": "لوحة التحكم",
+    "products": "المنتجات",
+    "categories": "التصنيفات",
+    "users": "المستخدمين",
+    "notifications": "الاشعارات",
+    "settings": "الاعدادات",
+    "logout": "تسجيل الخروج",
+    "customer_service": "خدمة العملاء",
+    "total_users": "عدد المستخدمين",
+    "total_products": "عدد المنتجات",
+    "total_categories": "عدد التصنيفات",
+    "total_orders": "عدد الطلبات",
+    "total_sales": "عدد المبيعات",
+    "total_refunds": "عدد المرتجعات",
+    "total_revenue": "الايربان",
+    "error": "خطأ"
+    
 }

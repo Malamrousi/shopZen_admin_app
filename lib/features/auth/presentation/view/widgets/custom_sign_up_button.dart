@@ -29,7 +29,7 @@ class CustomSignUpButton extends StatelessWidget {
             message: "sign_up_successfully".tr(context),
             seconds: 2,
           );
-          SharedPref().setString(PrefKeys.isLogin, "true");
+             SharedPref().setString(PrefKeys.isLogin, "true");
 
           context.pushNamed(RouteName.home);
         }, failure: (message) {

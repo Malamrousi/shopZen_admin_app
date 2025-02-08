@@ -34,6 +34,10 @@ class ColorsManger {
   static const Color alertColorYellow300 = Color(0xffff8cf51);
   static const Color alertColorYellow400 = Color(0xffff6bc2f);
 
+static const Color cloudGray = Color(0xffF5F6FA);
 
+  static const Color black1 = Color(0xff353F54);
+  static const Color black2 = Color(0xff222834);
+  static const Color backgroundColor = Color(0xff1B2431);
 }
 

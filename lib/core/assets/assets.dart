@@ -32,9 +32,51 @@ class Assets {
 
   static const String imagesUserAvatar = "assets/images/user_avatar.png";
 
+  static const String svgCategoryDarkTheme = "assets/svg/category_dark_theme.svg";
+
+  static const String svgCategoryLightTheme = "assets/svg/category_light_theme.svg";
+
+  static const String svgCustomerServiceDarkTheme = "assets/svg/customer_service_dark_theme.svg";
+
+  static const String svgCustomerServiceLightTheme = "assets/svg/customer_service_light_theme.svg";
+
+  static const String svgDashboardDarkTheme = "assets/svg/dashboard_dark_theme.svg";
+
+  static const String svgDashboardLightTheme = "assets/svg/dashboard_light_theme.svg";
+
+  static const String svgDeliveryBox01 = "assets/svg/delivery-box-01.svg";
+
+  static const String svgLogOutDarkTheme = "assets/svg/log_out_dark_theme.svg";
+
+  static const String svgLogOutLightTheme = "assets/svg/log_out_light_theme.svg";
+
   static const String svgNoNetwork = "assets/svg/no_network.svg";
 
+  static const String svgNotificationDarkTheme = "assets/svg/notification_dark_theme.svg";
+
+  static const String svgNotificationLightTheme = "assets/svg/notification_light_theme.svg";
+
+  static const String svgProductDarkTheme = "assets/svg/product_dark_theme.svg";
+
+  static const String svgProductLightTheme = "assets/svg/product_light_theme.svg";
+
+  static const String svgSettingsDarkTheme = "assets/svg/settings_dark_theme.svg";
+
+  static const String svgSettingsLightTheme = "assets/svg/settings_light_theme.svg";
+
   static const String svgShoppingDesktop = "assets/svg/shopping_desktop.svg";
+
+  static const String svgTotalCategory = "assets/svg/total_category.svg";
+
+  static const String svgTotalProduct = "assets/svg/total_product.svg";
+
+  static const String svgTotalSales = "assets/svg/total_sales.svg";
+
+  static const String svgTotalUsers = "assets/svg/total_users.svg";
+
+  static const String svgUserDarkTheme = "assets/svg/user_dark_theme.svg";
+
+  static const String svgUserLightTheme = "assets/svg/user_light_theme.svg";
 
   static const String translationsArEG = "assets/translations/ar-EG.json";
 

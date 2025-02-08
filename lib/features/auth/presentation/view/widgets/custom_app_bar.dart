@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(children: [
       Image.asset(
-        context.imageExtension.image ?? "",
+        context.imageExtension.images["logo"] ?? "",
         height: 100.h,
         width: 100.w,
       ),

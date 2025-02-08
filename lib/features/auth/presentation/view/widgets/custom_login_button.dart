@@ -27,16 +27,11 @@ class CustomLoginButton extends StatelessWidget {
               message: "login_success".tr(context),
               seconds: 2,
             );
-            if (userRole == "admin") {
-              ShowToast.showToastErrorTop(
-                message: "you_are_admin".tr(context),
-                seconds: 2,
-              );
-            } else {
+            
               SharedPref().setString(PrefKeys.isLogin, "true");
 
               context.pushNamed(RouteName.home);
-            }
+            
           },
           failure: (message) {
             ShowToast.showToastErrorTop(

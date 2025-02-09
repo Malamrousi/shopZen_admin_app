@@ -11,7 +11,7 @@ import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/app_text_form_filed.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
-import '../user_table.dart';
+import '../get_users_bloc.dart';
 
 class MobileUsersScreen extends StatefulWidget {
   const MobileUsersScreen({super.key});
@@ -76,7 +76,7 @@ class _MobileUsersScreenState extends State<MobileUsersScreen> {
                 child: SizedBox(
                   child: SizedBox(
                     width: max(MediaQuery.of(context).size.width, 600.w),
-                    child: UserTable(),
+                    child: GetUsersBloc(),
                   ),
                 ),
               ),

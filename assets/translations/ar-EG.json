@@ -62,6 +62,9 @@
     "search_for_categories": "ابحث عن التصنيفات",
     "delete": "حذف",
     "edit": "تعديل",
-    "image": "صورة المستخدمين"
-    
+    "image": "صورة المستخدمين",
+    "no_users_found": "لا يوجد مستخدمين",
+    "error_while_fetching_users": "حدث خطأ أثناء جلب المستخدمين",
+  
+    "no_email": "لا يوجد بريد"
 }

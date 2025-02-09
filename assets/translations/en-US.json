@@ -61,6 +61,10 @@
   "delete":"Delete",
   "edit":"Edit",
   "add":"Add",
-  "image":"Image"
-  
+  "image":"Image",
+  "no_users_found":"No users found",
+  "no_name":"No name",
+  "no_products_found":"No products found",
+  "no_categories_found":"No categories found",
+  "no_email":"No email"
 }

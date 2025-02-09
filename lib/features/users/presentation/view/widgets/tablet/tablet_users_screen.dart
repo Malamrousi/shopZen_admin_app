@@ -11,7 +11,7 @@ import '../../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
-import '../user_table.dart';
+import '../get_users_bloc.dart';
 
 
 class TabletUsersScreen extends StatefulWidget {
@@ -72,7 +72,7 @@ class _TabletUsersScreenState extends State<TabletUsersScreen> {
                 child: SizedBox(
                   child: SizedBox(
                     width: max(MediaQuery.of(context).size.width, 600.w),
-                    child: UserTable(),
+                    child: GetUsersBloc(),
                   ),
                 ),
               ),

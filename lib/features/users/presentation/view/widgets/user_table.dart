@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/assets/assets.dart';
 import 'package:shopzen_admin_dashboard/core/utils/colors_manger.dart';
+import 'package:shopzen_admin_dashboard/features/users/data/model/get_all_user_model.dart';
 import 'package:shopzen_admin_dashboard/responsive_layout.dart';
 
 import '../../../../../core/shared_pref/shared_pref.dart';
@@ -11,7 +12,8 @@ import '../../../../../core/utils/styles/app_text_styles.dart';
 import 'table_cell_title_widget.dart';
 
 class UserTable extends StatelessWidget {
-  const UserTable({super.key});
+  const UserTable({super.key, required this.users});
+  final List<GetAllUserModel> users;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +74,7 @@ class UserTable extends StatelessWidget {
           ],
         ),
         ...List.generate(
-          150,
+          users.length,
           (index) => TableRow(
             decoration: BoxDecoration(
               color: isDark ? ColorsManger.blackColor : ColorsManger.whiteColor,
@@ -83,13 +85,19 @@ class UserTable extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30.r),
-                    child: Image.asset(
-                      Assets.imagesUserAvatar,
-                      width: 50,
-                      height: 50,
-                    ),
-                  ),
+                      borderRadius: BorderRadius.circular(30.r),
+                      child: Image.network(
+                        users[index].image ?? "https://www.bing.com/ck/a?!&&p=78ea4b271a26a8983c047d00abaffbba6c0a8596dc45f4bea100cd250e88e5d1JmltdHM9MTczOTA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=22c91547-5363-6e58-3d2d-00c4521f6f84&u=a1L2ltYWdlcy9zZWFyY2g_cT1VU0VSJTIwQVZURVIlMjBJTUFHRSZGT1JNPUlRRlJCQSZpZD0yM0RBNjQ1N0RFQTYyQzU4REVCRTNFNTQ3QjFFMTAxNjk2MkU0RDIy&ntb=1",
+                        width: 50,
+                        height: 50,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.asset(
+                            Assets.imagesUserAvatar,
+                            width: 50,
+                            height: 50,
+                          );
+                        },
+                      )),
                 ),
               ),
               TableCell(
@@ -97,7 +105,7 @@ class UserTable extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
-                    "Mohammed",
+                    users[index].name ?? "no_name".tr(context),
                     style: ResponsiveLayout.isDesktop(context)
                         ? AppTextStyles.font16Medium(context)
                         : AppTextStyles.font16MediumFixedFontSize(context),
@@ -109,7 +117,10 @@ class UserTable extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
-                    "8i4sR@example.com",
+                    users[index].email ?? "no_email".tr(context),
+                    style: ResponsiveLayout.isDesktop(context)
+                        ? AppTextStyles.font16Medium(context)
+                        : AppTextStyles.font16MediumFixedFontSize(context),
                   ),
                 ),
               ),

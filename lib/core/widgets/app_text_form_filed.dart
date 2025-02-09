@@ -16,7 +16,7 @@ class AppTextFormFiled extends StatelessWidget {
       this.suffixIcon,
       this.fillColor,
       this.controller,
-      required this.validator, });
+      required this.validator, this.onChanged, });
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
@@ -28,10 +28,12 @@ class AppTextFormFiled extends StatelessWidget {
   final Color? fillColor;
   final TextEditingController? controller;
   final Function(String? value) validator;
+final  Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       controller: controller,
       validator: (value) {
         return validator(value);

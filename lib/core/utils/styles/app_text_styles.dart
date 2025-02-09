@@ -60,6 +60,17 @@ class AppTextStyles {
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
+/*************  ✨ Codeium Command ⭐  *************/
+/******  46c7b329-9cb8-4d49-823e-67776038c6aa  *******/
+
+
+
+        static TextStyle font16MediumFixedFontSizeWhite(BuildContext context) => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightManger.medium,
+        color: ColorsManger.whiteColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
   static TextStyle font16MediumPrimary700(BuildContext context) => TextStyle(
         fontSize: 16,
         fontWeight: FontWeightManger.medium,

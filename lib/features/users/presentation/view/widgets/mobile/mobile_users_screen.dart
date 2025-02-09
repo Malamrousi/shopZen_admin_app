@@ -1,8 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 
 import '../../../../../../core/helper/spacing.dart';
 import '../../../../../../core/shared_pref/shared_pref.dart';
@@ -31,6 +33,11 @@ class _MobileUsersScreenState extends State<MobileUsersScreen> {
   }
 
   bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
+  @override
+  void dispose() {
+    context.read<GetAllUsersBloc>().searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,29 +65,47 @@ class _MobileUsersScreenState extends State<MobileUsersScreen> {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              AppTextFormFiled(
-                validator: (value) {},
-                hintText: "search_for_users".tr(context),
-                suffixIcon: const Icon(
-                  Icons.search,
-                  size: 28,
-                  color: ColorsManger.primaryColor500,
-                ),
-                hintStyle: AppTextStyles.font16Medium(context),
-              ),
-              verticalSpacing(10.h),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: SizedBox(
-                  child: SizedBox(
-                    width: max(MediaQuery.of(context).size.width, 600.w),
-                    child: GetUsersBloc(),
+          child: BlocBuilder<GetAllUsersBloc, GetAllUsersState>(
+            builder: (context, state) {
+              final bloc = context.read<GetAllUsersBloc>();
+              return Column(
+                children: [
+                  AppTextFormFiled(
+                    onChanged: (value) {
+                      bloc.add(GetAllUsersEvent.searchForUsers(search: value));
+                      return null;
+                    },
+                    controller: bloc.searchController,
+                    validator: (value) {},
+                    hintText: "search_for_users".tr(context),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        bloc.searchController.text.isEmpty
+                            ? Icons.search
+                            : Icons.clear,
+                        size: 28,
+                        color: ColorsManger.primaryColor500,
+                      ),
+                      onPressed: () {
+                        bloc.searchController.clear();
+                        bloc.add(const GetAllUsersEvent.getAllUsers(isNotLoading: true));
+                      },
+                    ),
+                    hintStyle: AppTextStyles.font16Medium(context),
                   ),
-                ),
-              ),
-            ],
+                  verticalSpacing(10.h),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SizedBox(
+                      child: SizedBox(
+                        width: max(MediaQuery.of(context).size.width, 600.w),
+                        child: GetUsersBloc(),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         ),
       ),

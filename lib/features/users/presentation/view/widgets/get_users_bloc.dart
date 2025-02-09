@@ -27,6 +27,11 @@ class GetUsersBloc extends StatelessWidget {
               users: users,
             );
           },
+          search: (searchUserList) {
+          return   UserTable(
+              users: searchUserList,
+            );
+          },
           empty: () {
             return  Center(
               child: Text("no_users_found".tr(context),

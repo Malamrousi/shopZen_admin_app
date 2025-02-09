@@ -27,10 +27,10 @@ class UserTable extends StatelessWidget {
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       columnWidths: {
         0: FixedColumnWidth(
-            ResponsiveLayout.isMobile(context) ? 190.w : 70.w), // Image column
-        1: FlexColumnWidth(70.w), // Name column
-        2: FlexColumnWidth(70.w), // Email column
-        3: FixedColumnWidth(isMobile ? 90.w : 70.w), // Delete column
+            ResponsiveLayout.isMobile(context) ? 190.w : 120.w), // Image column
+        1: FlexColumnWidth(90.w), // Name column
+        2: FlexColumnWidth(90.w), // Email column
+        3: FixedColumnWidth(isMobile ? 100.w : 90.w), // Delete column
       },
       children: [
         TableRow(
@@ -128,6 +128,8 @@ class UserTable extends StatelessWidget {
                 verticalAlignment: TableCellVerticalAlignment.middle,
                 child: Icon(
                   Icons.delete,
+                              size: ResponsiveLayout.isDesktop(context) ? 30 : 17.sp,
+
                   color: ColorsManger.alertColorRed500,
                 ),
               ),

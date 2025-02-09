@@ -15,8 +15,8 @@ class UsersRepo {
   try {
     final response = await dataSource.getAllUsers();
     return ApiResult.success(response);
-  } catch (e) {
-    return ApiResult.failure(e.toString());
+  } catch (error) {
+    return ApiResult.failure(error.toString());
   }
  }
   

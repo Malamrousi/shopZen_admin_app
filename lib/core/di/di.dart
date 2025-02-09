@@ -15,6 +15,9 @@ import '../../features/auth/data/data_source/auth_data_source.dart';
 import '../../features/auth/data/repo/auth_repo.dart';
 import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
+import '../../features/users/data/data_source/users_data_source.dart';
+import '../../features/users/data/repo/users_repo.dart';
+import '../../features/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import '../api/dio_factory.dart';
 
 final getIt = GetIt.instance;
@@ -91,6 +94,24 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<UserNumberBloc>(
     () => UserNumberBloc(
       getIt.get<DashboardRepo>(),
+    ),
+  );
+  //users Data source
+  getIt.registerLazySingleton<UsersDataSource>(
+    () => UsersDataSource(
+      apiService: getIt.get<ApiService>(),
+    ),
+  );
+  //user repo
+  getIt.registerLazySingleton<UsersRepo>(
+    () => UsersRepo(
+      dataSource: getIt.get<UsersDataSource>(),
+    ),
+  );
+  //userBloc
+  getIt.registerFactory<GetAllUsersBloc>(
+    () => GetAllUsersBloc(
+      usersRepo: getIt.get<UsersRepo>(),
     ),
   );
 }

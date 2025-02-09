@@ -75,7 +75,16 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case RouteName.users:
       return PageFadeTransition(
-        page: UsersScreen(),
+        page: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<UserNumberBloc>()
+                ..add(
+                  UserNumberEvent.getUsers(),
+                ),
+            ),
+          ],
+          child: UsersScreen()),
       );
     case RouteName.notifications:
       return PageFadeTransition(

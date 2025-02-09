@@ -9,6 +9,7 @@ import 'package:shopzen_admin_dashboard/features/home/data/model/get_all_categor
 import 'package:shopzen_admin_dashboard/features/home/data/model/get_all_product_number.dart';
 
 import '../../features/home/data/model/get_all_user_number.dart';
+import '../../features/users/data/model/get_all_user_model.dart';
 
 
 part 'api_services.g.dart';
@@ -51,4 +52,10 @@ abstract class ApiService {
   Future<GetAllUserNumberResponse> numberOfUsers(
     @Body() Map<String, dynamic> query,
   );
+       @POST(graphql)
+
+    Future<GetAllUserResponse> getAllUsers(
+    @Body() Map<String, dynamic> query,
+  );
+  
 }

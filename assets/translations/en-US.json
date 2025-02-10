@@ -54,5 +54,19 @@
   "total_orders":"Total Orders",
   "total_sales":"Total Sales",
   "total_refunds":"Total Refunds",
-  "error":"Error"
+  "error":"Error",
+  "search_for_users":"search for users",
+  "search_for_products":"search for products",
+  "search_for_categories":"search for categories",
+  "delete":"Delete",
+  "edit":"Edit",
+  "add":"Add",
+  "image":"Image",
+  "no_users_found":"No users found",
+  "no_name":"No name",
+  "no_products_found":"No products found",
+  "no_categories_found":"No categories found",
+  "no_email":"No email",
+  "delete_user_successfully":"Delete user successfully",
+  "error_when_delete_user":"Error when delete user"
 }

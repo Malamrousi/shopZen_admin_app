@@ -56,6 +56,18 @@
     "total_sales": "عدد المبيعات",
     "total_refunds": "عدد المرتجعات",
     "total_revenue": "الايربان",
-    "error": "خطأ"
-    
+    "error": "خطأ",
+    "search_for_users": "ابحث عن المستخدمين",
+    "search_for_products": "ابحث عن المنتجات",
+    "search_for_categories": "ابحث عن التصنيفات",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "image": "صورة المستخدمين",
+    "no_users_found": "لا يوجد مستخدمين",
+    "error_while_fetching_users": "حدث خطأ أثناء جلب المستخدمين",
+  
+    "no_email": "لا يوجد بريد",
+    "delete_user_successfully": "تم حذف المستخدم بنجاح",
+    "error_when_delete_user": "حدث خطأ أثناء حذف المستخدم"
+
 }

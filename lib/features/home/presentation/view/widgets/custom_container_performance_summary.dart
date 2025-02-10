@@ -67,7 +67,7 @@ class CustomContainerPerformanceSummary extends StatelessWidget {
                 ],
               ),
              if(isLoading) 
-             LoadingShimmer(width: 50.w, height: 30.h,)
+             LoadingShimmer(width: 50, height: 30)
              else
              Text(number, style: AppTextStyles.font24Bold(context)),
             ],

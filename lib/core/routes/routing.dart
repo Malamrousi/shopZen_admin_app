@@ -14,6 +14,8 @@ import 'package:shopzen_admin_dashboard/features/customer_services/presentation/
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_number/user_number_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/view/notifications_screen.dart';
 import 'package:shopzen_admin_dashboard/features/settings/presentation/view/settings_screen.dart';
+import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/delete_user/delete_users_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/users/presentation/view/users_screen.dart';
 
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
@@ -75,7 +77,22 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case RouteName.users:
       return PageFadeTransition(
-        page: UsersScreen(),
+        page: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<GetAllUsersBloc>()
+                ..add(
+                  GetAllUsersEvent.getAllUsers(isNotLoading: true
+                ),
+            ),
+        ),
+          BlocProvider(
+              create: (context) => getIt.get<DeleteUsersBloc>()
+                
+            ),
+        
+        ],
+          child: UsersScreen()),
       );
     case RouteName.notifications:
       return PageFadeTransition(

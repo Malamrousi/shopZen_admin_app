@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/custom_drawer.dart';
-import 'package:shopzen_admin_dashboard/features/home/presentation/view/widgets/mobile/dash_board_widget.dart';
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/utils/colors_manger.dart';
+import '../desktop/performance_summary.dart';
 class TabletHomeScreen extends StatefulWidget {
   const TabletHomeScreen({super.key});
 
@@ -46,7 +46,10 @@ class _TabletHomeScreenState extends State<TabletHomeScreen> {
         selectedIndex: _selectedIndex,
         onItemSelected: _onItemSelected,
       ),
-      body:DashBoardWidget(),
+      body:   SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  child: PerformanceSummary()),
     );
   }
 }

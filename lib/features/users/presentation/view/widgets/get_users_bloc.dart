@@ -24,12 +24,12 @@ class GetUsersBloc extends StatelessWidget {
           },
           success: (users) {
             return UserTable(
-              users: users,
+              usersList: users,
             );
           },
           search: (searchUserList) {
           return   UserTable(
-              users: searchUserList,
+              usersList: searchUserList,
             );
           },
           empty: () {

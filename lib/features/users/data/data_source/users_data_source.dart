@@ -14,4 +14,8 @@ class UsersDataSource {
     final response = await apiService.getAllUsers(UsersQueries().getAllUsers());
     return response;
   }
+
+  Future<void> deleteUser({required String userId}) async {
+    await apiService.deleteUser(UsersQueries().deleteUser(userId: userId));
+  }
 }

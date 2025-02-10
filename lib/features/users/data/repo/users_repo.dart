@@ -10,14 +10,21 @@ class UsersRepo {
     required this.dataSource,
   });
 
-
- Future<ApiResult<GetAllUserResponse>> getAllUsers() async {
-  try {
-    final response = await dataSource.getAllUsers();
-    return ApiResult.success(response);
-  } catch (error) {
-    return ApiResult.failure(error.toString());
+  Future<ApiResult<GetAllUserResponse>> getAllUsers() async {
+    try {
+      final response = await dataSource.getAllUsers();
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
   }
- }
-  
+
+  Future<ApiResult<void>> deleteUser({required String userId}) async {
+    try {
+      final response = await dataSource.deleteUser(userId: userId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
+  }
 }

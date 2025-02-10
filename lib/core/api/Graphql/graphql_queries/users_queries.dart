@@ -1,5 +1,5 @@
 class UsersQueries {
-    factory UsersQueries() {
+  factory UsersQueries() {
     return _instance;
   }
   const UsersQueries._();
@@ -21,4 +21,17 @@ class UsersQueries {
     };
   }
 
+  Map<String, dynamic> deleteUser({required String userId}) {
+
+      return {
+      'query': r'''
+            mutation DeleteUser($userId: ID!) {
+              deleteUser(id: $userId)
+            }
+      ''',
+      'variables': {
+        'userId': userId,
+      },
+    };
+  }
 }

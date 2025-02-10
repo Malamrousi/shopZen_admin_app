@@ -17,6 +17,7 @@ import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
 import '../../features/users/data/data_source/users_data_source.dart';
 import '../../features/users/data/repo/users_repo.dart';
+import '../../features/users/presentation/bloc/delete_user/delete_users_bloc.dart';
 import '../../features/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import '../api/dio_factory.dart';
 
@@ -111,6 +112,13 @@ Future<void> setupDependencies() async {
   //userBloc
   getIt.registerFactory<GetAllUsersBloc>(
     () => GetAllUsersBloc(
+      usersRepo: getIt.get<UsersRepo>(),
+    ),
+  );
+
+  //deleteUserBloc
+  getIt.registerFactory<DeleteUsersBloc>(
+    () => DeleteUsersBloc(
       usersRepo: getIt.get<UsersRepo>(),
     ),
   );

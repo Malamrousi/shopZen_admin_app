@@ -11,9 +11,9 @@ import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
-import '../../../../../../core/widgets/app_text_form_filed.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
 import '../get_users_bloc.dart';
+import '../text_search_filed.dart';
 
 class MobileUsersScreen extends StatefulWidget {
   const MobileUsersScreen({super.key});
@@ -67,32 +67,9 @@ class _MobileUsersScreenState extends State<MobileUsersScreen> {
         child: SingleChildScrollView(
           child: BlocBuilder<GetAllUsersBloc, GetAllUsersState>(
             builder: (context, state) {
-              final bloc = context.read<GetAllUsersBloc>();
               return Column(
                 children: [
-                  AppTextFormFiled(
-                    onChanged: (value) {
-                      bloc.add(GetAllUsersEvent.searchForUsers(search: value));
-                      return null;
-                    },
-                    controller: bloc.searchController,
-                    validator: (value) {},
-                    hintText: "search_for_users".tr(context),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        bloc.searchController.text.isEmpty
-                            ? Icons.search
-                            : Icons.clear,
-                        size: 28,
-                        color: ColorsManger.primaryColor500,
-                      ),
-                      onPressed: () {
-                        bloc.searchController.clear();
-                        bloc.add(const GetAllUsersEvent.getAllUsers(isNotLoading: true));
-                      },
-                    ),
-                    hintStyle: AppTextStyles.font16Medium(context),
-                  ),
+                 TextSearchFiled(),
                   verticalSpacing(10.h),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,

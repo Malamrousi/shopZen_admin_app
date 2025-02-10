@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
-import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
-import 'package:shopzen_admin_dashboard/core/widgets/app_text_form_filed.dart';
+
 import '../get_users_bloc.dart';
+import '../text_search_filed.dart';
 
 class DisplayUserBody extends StatelessWidget {
   const DisplayUserBody({super.key});
@@ -15,12 +14,7 @@ class DisplayUserBody extends StatelessWidget {
       child: Column(
         children: [
           verticalSpacing(40),
-          AppTextFormFiled(
-            validator: (value) {},
-            hintText: "search_for_users".tr(context),
-            suffixIcon: const Icon(Icons.search),
-            hintStyle: AppTextStyles.font16Medium(context),
-          ),
+       TextSearchFiled(),
           verticalSpacing(40),
           Flexible(
             child: CustomScrollView(

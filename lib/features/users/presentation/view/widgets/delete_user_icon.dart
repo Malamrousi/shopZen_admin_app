@@ -22,12 +22,16 @@ class DeleteUserIcon extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           success: () {
-            context
+            Future.delayed(Duration(seconds: 1)
+            ).then((_){
+               context
                 .read<GetAllUsersBloc>()
                 .add(const GetAllUsersEvent.getAllUsers(isNotLoading: false));
+            }
+            );
             if (!kIsWeb) {
               ShowToast.showToastSuccessTop(
-                  message: "delete_user_successfully".tr(context), seconds: 2);
+                  message: "delete_user_successfully".tr(context), seconds: 1);
             }
           },
           failure: (message) {

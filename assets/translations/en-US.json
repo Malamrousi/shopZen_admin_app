@@ -68,5 +68,12 @@
   "no_categories_found":"No categories found",
   "no_email":"No email",
   "delete_user_successfully":"Delete user successfully",
-  "error_when_delete_user":"Error when delete user"
+  "error_when_delete_user":"Error when delete user" ,
+  "crate_new":"Create New",
+  "search_for_category" :"Search for Category",
+  "creation_at" :"Creation At",
+  "updated_at" :"Updated At",
+  "actions" :"Actions",
+  "category_name":"Category"
+
 }

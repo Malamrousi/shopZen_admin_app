@@ -3,12 +3,14 @@ import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
 
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
+import 'display_category_info.dart';
 
 class DesktopCategoryBodyScreen extends StatefulWidget {
   const DesktopCategoryBodyScreen({super.key});
 
   @override
-  State<DesktopCategoryBodyScreen> createState() => _DesktopCategoryBodyScreenState();
+  State<DesktopCategoryBodyScreen> createState() =>
+      _DesktopCategoryBodyScreenState();
 }
 
 class _DesktopCategoryBodyScreenState extends State<DesktopCategoryBodyScreen> {
@@ -31,12 +33,7 @@ class _DesktopCategoryBodyScreenState extends State<DesktopCategoryBodyScreen> {
             onItemSelected: _onItemSelected,
           ),
         ),
-        Expanded(
-          flex: 4,
-          child: Center(
-            child: Text("Category Desktop"),
-          ),
-        )
+        Expanded(flex: 4, child: DisplayCategoryInfo())
       ],
     );
   }

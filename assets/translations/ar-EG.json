@@ -68,6 +68,12 @@
   
     "no_email": "لا يوجد بريد",
     "delete_user_successfully": "تم حذف المستخدم بنجاح",
-    "error_when_delete_user": "حدث خطأ أثناء حذف المستخدم"
+    "error_when_delete_user": "حدث خطأ أثناء حذف المستخدم",
+    "crate_new" :"اضافة جديد",
+    "search_for_category":"البحث عن التصنيفات",
+      "creation_at" :"انشاء في",
+  "updated_at" :"اخر تحديث",
+  "actions" :"الإجراءات",
+  "category_name":"اسم التصنيف"
 
 }

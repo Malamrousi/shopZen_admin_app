@@ -31,7 +31,7 @@ class TableCellTitleWidget extends StatelessWidget {
           Text(
             title,
             style: ResponsiveLayout.isDesktop(context)
-                ? AppTextStyles.font12Regular(context)
+                ? AppTextStyles.font16Regular(context)
                 : AppTextStyles.font16MediumFixedFontSizeWhite(context),
           )
         ],

@@ -80,6 +80,12 @@ class AppTextStyles {
         color: ColorsManger.whiteColor,
         fontFamily: FontFamily.getFontFamily(),
       );
+           static TextStyle font19RegularFixedFontSizeWhite(BuildContext context) => TextStyle(
+        fontSize: 19.sp,
+        fontWeight: FontWeightManger.regular,
+        color: ColorsManger.whiteColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
   static TextStyle font16MediumPrimary700(BuildContext context) => TextStyle(
         fontSize: 16,
         fontWeight: FontWeightManger.medium,

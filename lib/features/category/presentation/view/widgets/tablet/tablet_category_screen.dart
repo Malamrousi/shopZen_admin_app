@@ -13,7 +13,7 @@ import '../../../../../../core/widgets/app_text_form_filed.dart';
 import '../../../../../../core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
 import '../../../../../../responsive_layout.dart';
-import '../category_table.dart';
+import '../get_all_categories_bloc.dart';
 
 class TabletCategoryScreen extends StatefulWidget {
   const TabletCategoryScreen({super.key});
@@ -107,7 +107,7 @@ class _TabletCategoryScreenState extends State<TabletCategoryScreen> {
                 child: SizedBox(
                   child: SizedBox(
                     width: max(MediaQuery.of(context).size.width, 800.w),
-                    child: CategoryTable(),
+                    child: GetAllCategoriesDataBloc(),
                   ),
                 ),
               ),

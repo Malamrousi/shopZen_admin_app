@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/features/category/data/models/get_all_categories.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../../core/assets/assets.dart';
 import '../../../../../core/helper/spacing.dart';
@@ -12,7 +14,8 @@ import '../../../../../core/widgets/table_cell_title_widget.dart';
 import '../../../../../responsive_layout.dart';
 
 class CategoryTable extends StatelessWidget {
-  const CategoryTable({super.key});
+  const CategoryTable({super.key, required this.categoriesList});
+  final List<GetAllCategoriesModel> categoriesList;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +24,19 @@ class CategoryTable extends StatelessWidget {
     return Table(
       border: TableBorder.all(color: ColorsManger.primaryColor500),
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
- columnWidths: {
-  0: FlexColumnWidth(ResponsiveLayout.isMobile(context) ? 2.5: 1), // Image column
-  1: FlexColumnWidth(ResponsiveLayout.isMobile(context) ? 2.5 :1), // Name column
-  2: FlexColumnWidth(ResponsiveLayout.isMobile(context) ? 2 : 1), // Creation date column
-  3: FlexColumnWidth(ResponsiveLayout.isMobile(context) ? 2 : 1), // Update date column
-  4: FlexColumnWidth ( ResponsiveLayout.isMobile(context) ? 2 : 0.8), // Actions column - slightly smaller
-},
+      columnWidths: {
+        0: FlexColumnWidth(
+            ResponsiveLayout.isMobile(context) ? 2.5 : 1), // Image column
+        1: FlexColumnWidth(
+            ResponsiveLayout.isMobile(context) ? 2.5 : 1), // Name column
+        2: FlexColumnWidth(
+            ResponsiveLayout.isMobile(context) ? 2 : 1), // Creation date column
+        3: FlexColumnWidth(
+            ResponsiveLayout.isMobile(context) ? 2 : 1), // Update date column
+        4: FlexColumnWidth(ResponsiveLayout.isMobile(context)
+            ? 2
+            : 0.8), // Actions column - slightly smaller
+      },
       children: [
         TableRow(
           decoration: BoxDecoration(
@@ -77,7 +86,7 @@ class CategoryTable extends StatelessWidget {
           ],
         ),
         ...List.generate(
-          10,
+          categoriesList.length,
           (index) => TableRow(
             decoration: BoxDecoration(
               color: isDark ? ColorsManger.blackColor : ColorsManger.whiteColor,
@@ -91,12 +100,12 @@ class CategoryTable extends StatelessWidget {
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(30.r),
                       child: Image.network(
-                        "https://www.bing.com/ck/a?!&&p=78ea4b271a26a8983c047d00abaffbba6c0a8596dc45f4bea100cd250e88e5d1JmltdHM9MTczOTA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=22c91547-5363-6e58-3d2d-00c4521f6f84&u=a1L2ltYWdlcy9zZWFyY2g_cT1VU0VSJTIwQVZURVIlMjBJTUFHRSZGT1JNPUlRRlJCQSZpZD0yM0RBNjQ1N0RFQTYyQzU4REVCRTNFNTQ3QjFFMTAxNjk2MkU0RDIy&ntb=1",
+                        categoriesList[index].image ?? Assets.imagesUserAvatar,
                         width: 50,
                         height: 50,
                         errorBuilder: (context, error, stackTrace) {
                           return Image.asset(
-                            Assets.imagesUserAvatar,
+                            Assets.imagesNotFoundImage,
                             width: 50,
                             height: 50,
                           );
@@ -110,7 +119,7 @@ class CategoryTable extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: Text(
-                    "Category",
+                    categoriesList[index].name ?? "",
                     style: ResponsiveLayout.isDesktop(context)
                         ? AppTextStyles.font16Medium(context)
                         : AppTextStyles.font16MediumFixedFontSize(context),
@@ -123,7 +132,10 @@ class CategoryTable extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: Text(
-                    "15/2/2025",
+                    categoriesList[index].updatedAt != null
+                        ? DateFormat('dd/MM/yyyy')
+                            .format(categoriesList[index].creationAt!.toUtc())
+                        : "ERROR",
                     style: ResponsiveLayout.isDesktop(context)
                         ? AppTextStyles.font16Medium(context)
                         : AppTextStyles.font16MediumFixedFontSize(context),
@@ -133,16 +145,18 @@ class CategoryTable extends StatelessWidget {
               // Update date
               TableCell(
                 verticalAlignment: TableCellVerticalAlignment.middle,
-                child:Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: Text(
-                    "15/2/2025",
+                     categoriesList[index].updatedAt != null
+                        ? DateFormat('dd/MM/yyyy')
+                            .format(categoriesList[index].updatedAt!.toUtc())
+                        : "ERROR",
                     style: ResponsiveLayout.isDesktop(context)
                         ? AppTextStyles.font16Medium(context)
                         : AppTextStyles.font16MediumFixedFontSize(context),
                   ),
                 ),
-              
               ),
               // Actions
               TableCell(

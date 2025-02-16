@@ -8,7 +8,7 @@ import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/app_text_form_filed.dart';
 import '../../../../../../responsive_layout.dart';
-import '../category_table.dart';
+import '../get_all_categories_bloc.dart';
 
 class DisplayCategoryInfo extends StatelessWidget {
   const DisplayCategoryInfo({super.key});
@@ -59,7 +59,7 @@ class DisplayCategoryInfo extends StatelessWidget {
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
-                  child: CategoryTable(),
+                  child: GetAllCategoriesDataBloc(),
                 )
               ],
             )),

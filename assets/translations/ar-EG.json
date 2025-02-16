@@ -74,6 +74,8 @@
       "creation_at" :"انشاء في",
   "updated_at" :"اخر تحديث",
   "actions" :"الإجراءات",
-  "category_name":"اسم التصنيف"
+  "category_name":"اسم التصنيف",
+  "no_category_found":"لا يوجد تصنيف",
+  "error_while_fetching_Categories":"حدث خطأ أثناء جلب التصنيفات"
 
 }

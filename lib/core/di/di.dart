@@ -10,10 +10,12 @@ import 'package:shopzen_admin_dashboard/features/home/data/data_source/dashboard
 import 'package:shopzen_admin_dashboard/features/home/data/repo/dashboard_repo.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/product_number/product_number_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_number/user_number_bloc.dart';
-
 import '../../features/auth/data/data_source/auth_data_source.dart';
 import '../../features/auth/data/repo/auth_repo.dart';
 import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import '../../features/category/data/data_source/gat_all_categories_data_source.dart';
+import '../../features/category/data/repo/get_all_categories_repo.dart';
+import '../../features/category/presentation/bloc/bloc/get_all_categories_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
 import '../../features/users/data/data_source/users_data_source.dart';
 import '../../features/users/data/repo/users_repo.dart';
@@ -120,6 +122,26 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<DeleteUsersBloc>(
     () => DeleteUsersBloc(
       usersRepo: getIt.get<UsersRepo>(),
+    ),
+  );
+
+  //getAllCategoriesDataSource
+  getIt.registerLazySingleton<GatAllCategoriesDataSource>(
+    () => GatAllCategoriesDataSource(
+      apiService: getIt.get<ApiService>(),
+    ),
+  );
+  //getAllCategoriesRepo
+  getIt.registerLazySingleton<GetAllCategoriesRepo>(
+    () => GetAllCategoriesRepo(
+      gatAllCategoriesDataSource: getIt.get<GatAllCategoriesDataSource>(),
+    ),
+  );
+
+  //getAllCategoriesBloc
+  getIt.registerFactory<GetAllCategoriesBloc>(
+    () => GetAllCategoriesBloc(
+      getAllCategoriesRepo: getIt.get<GetAllCategoriesRepo>(),
     ),
   );
 }

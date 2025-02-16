@@ -4,7 +4,15 @@ part 'get_all_categories.g.dart';
 class GetAllCategoriesResponse {
   final GetAllCategories? data;
   GetAllCategoriesResponse({this.data});
+
   factory GetAllCategoriesResponse.fromJson(Map<String, dynamic> json) => _$GetAllCategoriesResponseFromJson(json);
+
+  List <GetAllCategoriesModel>? get categoriesList {
+   if(data!.categories!.isEmpty){
+    return [];
+   }
+   return data!.categories;
+  }
 }
 
 @JsonSerializable()

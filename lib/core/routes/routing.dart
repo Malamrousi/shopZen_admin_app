@@ -18,6 +18,7 @@ import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/delete_
 import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/users/presentation/view/users_screen.dart';
 
+import '../../features/category/presentation/bloc/bloc/get_all_categories_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
 import '../../features/home/presentation/bloc/product_number/product_number_bloc.dart';
 import '../../features/home/presentation/view/home_screen.dart';
@@ -40,7 +41,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         BlocProvider(
           create: (context) => getIt.get<AuthBloc>(),
         )
-      ], child: SignUpScreen())); 
+      ], child: SignUpScreen()));
     case RouteName.home:
       return PageFadeTransition(
         page: MultiBlocProvider(
@@ -69,7 +70,16 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case RouteName.categories:
       return PageFadeTransition(
-        page: CategoryScreen(),
+        page: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<GetAllCategoriesBloc>()
+                ..add(
+                  GetAllCategoriesEvent.getAllCategories(),
+                ),
+            ),
+          ],
+          child: CategoryScreen()),
       );
     case RouteName.products:
       return PageFadeTransition(
@@ -77,22 +87,15 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case RouteName.users:
       return PageFadeTransition(
-        page: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => getIt.get<GetAllUsersBloc>()
-                ..add(
-                  GetAllUsersEvent.getAllUsers(isNotLoading: true
-                ),
-            ),
-        ),
+        page: MultiBlocProvider(providers: [
           BlocProvider(
-              create: (context) => getIt.get<DeleteUsersBloc>()
-                
-            ),
-        
-        ],
-          child: UsersScreen()),
+            create: (context) => getIt.get<GetAllUsersBloc>()
+              ..add(
+                GetAllUsersEvent.getAllUsers(isNotLoading: true),
+              ),
+          ),
+          BlocProvider(create: (context) => getIt.get<DeleteUsersBloc>()),
+        ], child: UsersScreen()),
       );
     case RouteName.notifications:
       return PageFadeTransition(

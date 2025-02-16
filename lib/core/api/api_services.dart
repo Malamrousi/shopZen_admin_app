@@ -8,6 +8,7 @@ import 'package:shopzen_admin_dashboard/features/auth/data/models/user_role_mode
 import 'package:shopzen_admin_dashboard/features/home/data/model/get_all_category_number.dart';
 import 'package:shopzen_admin_dashboard/features/home/data/model/get_all_product_number.dart';
 
+import '../../features/category/data/models/get_all_categories.dart';
 import '../../features/home/data/model/get_all_user_number.dart';
 import '../../features/users/data/model/get_all_user_model.dart';
 
@@ -58,5 +59,9 @@ abstract class ApiService {
   @POST(graphql)
   Future<void> deleteUser(
     @Body() Map<String, dynamic> mutation,
+  );
+    @POST(graphql)
+  Future<GetAllCategoriesResponse> getAllCategories(
+    @Body() Map<String, dynamic> query,
   );
 }

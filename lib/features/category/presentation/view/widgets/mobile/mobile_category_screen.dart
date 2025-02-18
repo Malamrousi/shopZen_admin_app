@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -64,41 +63,42 @@ class _MobileCategoryScreenState extends State<MobileCategoryScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-             verticalSpacing(10.h),
-          AppTextFormFiled(
-            onChanged: (value) {},
-            validator: (value) {},
-            hintText: "search_for_category".tr(context),
-            suffixIcon: IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 26,
-                color: ColorsManger.primaryColor400,
+              verticalSpacing(10.h),
+              AppTextFormFiled(
+                onChanged: (value) {},
+                validator: (value) {},
+                hintText: "search_for_category".tr(context),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    size: 26,
+                    color: ColorsManger.primaryColor400,
+                  ),
+                  onPressed: () {},
+                ),
+                hintStyle: ResponsiveLayout.isDesktop(context)
+                    ? AppTextStyles.font16RegularThemeColor(context)
+                    : AppTextStyles.font16MediumFixedFontSizeWhite(context),
               ),
-              onPressed: () {},
-            ),
-            hintStyle: ResponsiveLayout.isDesktop(context)
-                ? AppTextStyles.font16RegularThemeColor(context)
-                : AppTextStyles.font16MediumFixedFontSizeWhite(context),
-          ),
-          verticalSpacing(40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "categories".tr(context),
-                style: AppTextStyles.font16BoldFixedFontSize(context),
+              verticalSpacing(40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "categories".tr(context),
+                    style: AppTextStyles.font16BoldFixedFontSize(context),
+                  ),
+                  CustomButton(
+                    onPressed: () {
+                    },
+                    title: "crate_new".tr(context),
+                    bottomHeight: 45.h,
+                    bottomWidth: 150.w,
+                    borderRadius: 10,
+                    backgroundColor: ColorsManger.primaryColor400,
+                  ),
+                ],
               ),
-              CustomButton(
-                onPressed: () {},
-                title: "crate_new".tr(context),
-                bottomHeight: 45.h,
-                bottomWidth: 150.w,
-                borderRadius: 10,
-                backgroundColor: ColorsManger.primaryColor400,
-              ),
-            ],
-          ),
               verticalSpacing(10.h),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

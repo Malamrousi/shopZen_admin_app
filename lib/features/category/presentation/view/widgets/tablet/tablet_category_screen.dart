@@ -58,49 +58,50 @@ class _TabletCategoryScreenState extends State<TabletCategoryScreen> {
         onItemSelected: _onItemSelected,
         selectedIndex: _selectedIndex,
       ),
-      body:  Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: SingleChildScrollView(
           child: Column(
             children: [
-             verticalSpacing(10.h),
-          AppTextFormFiled(
-            onChanged: (value) {},
-            validator: (value) {},
-            hintText: "search_for_category".tr(context),
-            suffixIcon: IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 26.sp,
-                color: ColorsManger.primaryColor400,
+              verticalSpacing(10.h),
+              AppTextFormFiled(
+                onChanged: (value) {},
+                validator: (value) {},
+                hintText: "search_for_category".tr(context),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    size: 26.sp,
+                    color: ColorsManger.primaryColor400,
+                  ),
+                  onPressed: () {},
+                ),
+                hintStyle: ResponsiveLayout.isDesktop(context)
+                    ? AppTextStyles.font16RegularThemeColor(context)
+                    : AppTextStyles.font16MediumFixedFontSizeWhite(context),
               ),
-              onPressed: () {},
-            ),
-            hintStyle: ResponsiveLayout.isDesktop(context)
-                ? AppTextStyles.font16RegularThemeColor(context)
-                : AppTextStyles.font16MediumFixedFontSizeWhite(context),
-          ),
-          verticalSpacing(40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "categories".tr(context),
-                style: AppTextStyles.font16BoldFixedFontSize(context),
+              verticalSpacing(40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "categories".tr(context),
+                    style: AppTextStyles.font16BoldFixedFontSize(context),
+                  ),
+                  CustomButton(
+                    onPressed: () {
+                    },
+                    title: "crate_new".tr(context),
+                    bottomHeight: 45.h,
+                    bottomWidth: 150.w,
+                    borderRadius: 10,
+                    backgroundColor: ColorsManger.primaryColor400,
+                    textStyle: ResponsiveLayout.isDesktop(context)
+                        ? AppTextStyles.font16RegularThemeColor(context)
+                        : AppTextStyles.font16MediumFixedFontSizeWhite(context),
+                  ),
+                ],
               ),
-              CustomButton(
-                onPressed: () {},
-                title: "crate_new".tr(context),
-                bottomHeight: 45.h,
-                bottomWidth: 150.w,
-                borderRadius: 10,
-                backgroundColor: ColorsManger.primaryColor400,
-                textStyle: ResponsiveLayout.isDesktop(context)
-                ? AppTextStyles.font16RegularThemeColor(context)
-                : AppTextStyles.font16MediumFixedFontSizeWhite(context) ,
-              ),
-            ],
-          ),
               verticalSpacing(10.h),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

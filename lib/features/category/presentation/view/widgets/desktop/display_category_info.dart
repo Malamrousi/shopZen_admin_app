@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
+import 'package:shopzen_admin_dashboard/core/widgets/custom_bottom_sheet.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/custom_button.dart';
 
+import '../../../../../../core/shared_pref/shared_pref.dart';
+import '../../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/app_text_form_filed.dart';
 import '../../../../../../responsive_layout.dart';
+import '../../create_new_category_bottom_sheet.dart';
 import '../get_all_categories_bloc.dart';
 
 class DisplayCategoryInfo extends StatelessWidget {
@@ -15,6 +19,8 @@ class DisplayCategoryInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -45,7 +51,15 @@ class DisplayCategoryInfo extends StatelessWidget {
                 style: AppTextStyles.font24Bold(context),
               ),
               CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  CustomBottomSheet.showCustomModelBottomSheet(
+                    context: context,
+                    color: isDark
+                        ? ColorsManger.blackColor
+                        : ColorsManger.whiteColor,
+                    child: CreateNewCategoryBottomSheet(),
+                  );
+                },
                 title: "crate_new".tr(context),
                 bottomHeight: 30,
                 bottomWidth: 50.w,
@@ -55,14 +69,14 @@ class DisplayCategoryInfo extends StatelessWidget {
             ],
           ),
           verticalSpacing(40),
-              Flexible(
-            child: CustomScrollView(
-              slivers: [
-                SliverToBoxAdapter(
-                  child: GetAllCategoriesDataBloc(),
-                )
-              ],
-            )),
+          Flexible(
+              child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: GetAllCategoriesDataBloc(),
+              )
+            ],
+          )),
         ],
       ),
     );

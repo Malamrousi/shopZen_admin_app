@@ -108,7 +108,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case RouteName.customerService:
       return PageFadeTransition(
         page: CustomerServicesScreen(),
-      );
+      );   
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());
   }

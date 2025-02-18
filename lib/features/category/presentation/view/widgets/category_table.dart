@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/core/widgets/custom_bottom_sheet.dart';
 import 'package:shopzen_admin_dashboard/features/category/data/models/get_all_categories.dart';
 import 'package:intl/intl.dart';
+import 'package:shopzen_admin_dashboard/features/category/presentation/view/update_new_category_bottom_sheet.dart';
 
 import '../../../../../core/assets/assets.dart';
 import '../../../../../core/helper/spacing.dart';
@@ -148,7 +150,7 @@ class CategoryTable extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: Text(
-                     categoriesList[index].updatedAt != null
+                    categoriesList[index].updatedAt != null
                         ? DateFormat('dd/MM/yyyy')
                             .format(categoriesList[index].updatedAt!.toUtc())
                         : "ERROR",
@@ -167,10 +169,19 @@ class CategoryTable extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.edit,
-                        color: ColorsManger.primaryColor500,
-                        size: ResponsiveLayout.isDesktop(context) ? 30 : 19.sp,
+                      IconButton(
+                        icon: Icon(
+                          Icons.edit,
+                          color: ColorsManger.primaryColor500,
+                          size:
+                              ResponsiveLayout.isDesktop(context) ? 30 : 19.sp,
+                        ),
+                        onPressed: () {
+                          CustomBottomSheet.showCustomModelBottomSheet(
+                            context: context,
+                            child: UpdateNewCategoryBottomSheet(),
+                          );
+                        },
                       ),
                       horizontalSpacing(5),
                       Icon(

@@ -80,6 +80,7 @@
   "create_new_category":"اضافة تصنيف جديد",
   "add_image":"اضافة صورة",
   "remove": "حذف",
-  "enter_the_category_name":"اضافة اسم التصنيف"
+  "enter_the_category_name":"اضافة اسم التصنيف",
+  "update_category" : "تحديث التصنيف"
 
 }

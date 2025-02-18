@@ -80,6 +80,7 @@
   "create_new_category":"Create New Category",
   "add_image":"Add Image",
   "remove": "Remove",
-  "enter_the_category_name":"Enter The Category Name"
-  
+  "enter_the_category_name":"Enter The Category Name",
+  "update_category":"Update Category"
+
 }

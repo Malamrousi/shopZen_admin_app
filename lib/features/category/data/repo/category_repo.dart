@@ -5,10 +5,10 @@ import '../data_source/category_data_source.dart';
 import '../models/create_category_request_body.dart';
 import '../models/get_all_categories.dart';
 
-class GetAllCategoriesRepo {
+class CategoryRepo {
   final CategoryDataSource categoryDataSource;
 
-  GetAllCategoriesRepo({required this.categoryDataSource});
+  CategoryRepo({required this.categoryDataSource});
 
   Future<ApiResult<GetAllCategoriesResponse>> getAllCategories() async {
     try {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
-import 'package:shopzen_admin_dashboard/features/category/presentation/bloc/bloc/get_all_categories_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/category/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/category/presentation/view/widgets/category_table.dart';
 
 import '../../../../../core/utils/styles/app_text_styles.dart';

@@ -16,7 +16,7 @@ class GetAllCategoriesBloc
     on<GetCategoriesEvent>(getAllCategories);
   }
 
-  final GetAllCategoriesRepo getAllCategoriesRepo;
+  final CategoryRepo getAllCategoriesRepo;
 
   FutureOr<void> getAllCategories(
       GetAllCategoriesEvent event, Emitter emit) async {

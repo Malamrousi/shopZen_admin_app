@@ -13,8 +13,8 @@ import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_nu
 import '../../features/auth/data/data_source/auth_data_source.dart';
 import '../../features/auth/data/repo/auth_repo.dart';
 import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
-import '../../features/category/data/data_source/gat_all_categories_data_source.dart';
-import '../../features/category/data/repo/get_all_categories_repo.dart';
+import '../../features/category/data/data_source/category_data_source.dart';
+import '../../features/category/data/repo/category_repo.dart';
 import '../../features/category/presentation/bloc/bloc/get_all_categories_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
 import '../../features/users/data/data_source/users_data_source.dart';
@@ -126,15 +126,15 @@ Future<void> setupDependencies() async {
   );
 
   //getAllCategoriesDataSource
-  getIt.registerLazySingleton<GatAllCategoriesDataSource>(
-    () => GatAllCategoriesDataSource(
+  getIt.registerLazySingleton<CategoryDataSource>(
+    () => CategoryDataSource(
       apiService: getIt.get<ApiService>(),
     ),
   );
   //getAllCategoriesRepo
   getIt.registerLazySingleton<GetAllCategoriesRepo>(
     () => GetAllCategoriesRepo(
-      gatAllCategoriesDataSource: getIt.get<GatAllCategoriesDataSource>(),
+      categoryDataSource: getIt.get<CategoryDataSource>(),
     ),
   );
 

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../data/models/get_all_categories.dart';
-import '../../../data/repo/get_all_categories_repo.dart';
+import '../../../data/repo/category_repo.dart';
 
 part 'get_all_categories_event.dart';
 part 'get_all_categories_state.dart';

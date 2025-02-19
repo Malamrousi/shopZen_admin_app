@@ -5,6 +5,7 @@ import 'package:shopzen_admin_dashboard/core/upload/model/upload_image_response.
 import 'package:shopzen_admin_dashboard/features/auth/data/models/login_response_model.dart';
 import 'package:shopzen_admin_dashboard/features/auth/data/models/sign_up_response_model.dart';
 import 'package:shopzen_admin_dashboard/features/auth/data/models/user_role_model.dart';
+import 'package:shopzen_admin_dashboard/features/category/data/models/create_category_response.dart';
 import 'package:shopzen_admin_dashboard/features/home/data/model/get_all_category_number.dart';
 import 'package:shopzen_admin_dashboard/features/home/data/model/get_all_product_number.dart';
 
@@ -63,5 +64,9 @@ abstract class ApiService {
     @POST(graphql)
   Future<GetAllCategoriesResponse> getAllCategories(
     @Body() Map<String, dynamic> query,
+  );
+      @POST(graphql)
+  Future<CreateCategoryResponse> crateCategory(
+    @Body() Map<String, dynamic> mutation,
   );
 }

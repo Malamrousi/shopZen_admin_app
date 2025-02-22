@@ -4,15 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomBottomSheet {
   CustomBottomSheet._();
 
-  static void showCustomModelBottomSheet(
-          {required BuildContext context,
-          required Widget child,
-          Color? color,
-          VoidCallback? onClosed}) =>
-      showModalBottomSheet<dynamic>(
-        
+  static Future<void> showCustomModelBottomSheet({
+    required BuildContext context,
+    required Widget child,
+    Color? color,
+    VoidCallback? onClosed,
+  }) async {
+    try {
+      await showModalBottomSheet<dynamic>(
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
+        ),
         context: context,
         isScrollControlled: true,
         isDismissible: true,
@@ -25,10 +27,14 @@ class CustomBottomSheet {
             ),
             child: Container(
               width: MediaQuery.sizeOf(context).width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: child,
             ),
           );
         },
-      ).whenComplete(onClosed ?? () {});
+      );
+    } finally {
+      onClosed?.call();
+    }
+  }
 }

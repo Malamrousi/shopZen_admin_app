@@ -78,7 +78,6 @@ Route<dynamic> generateRoute(RouteSettings settings) {
                 GetAllCategoriesEvent.getAllCategories(),
               ),
           ),
-          BlocProvider(create: (context) => getIt.get<CreateCategoryBloc>()),
         ], child: CategoryScreen()),
       );
     case RouteName.products:

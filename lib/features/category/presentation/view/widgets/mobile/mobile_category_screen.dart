@@ -10,9 +10,12 @@ import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../../../core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/widgets/app_text_form_filed.dart';
+import '../../../../../../core/widgets/custom_bottom_sheet.dart';
 import '../../../../../../core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
 import '../../../../../../responsive_layout.dart';
+import '../../create_new_category_bottom_sheet.dart';
+import '../create_new_category_bloc.dart';
 import '../get_all_categories_bloc.dart';
 
 class MobileCategoryScreen extends StatefulWidget {
@@ -88,15 +91,7 @@ class _MobileCategoryScreenState extends State<MobileCategoryScreen> {
                     "categories".tr(context),
                     style: AppTextStyles.font16BoldFixedFontSize(context),
                   ),
-                  CustomButton(
-                    onPressed: () {
-                    },
-                    title: "crate_new".tr(context),
-                    bottomHeight: 45.h,
-                    bottomWidth: 150.w,
-                    borderRadius: 10,
-                    backgroundColor: ColorsManger.primaryColor400,
-                  ),
+                CreateNewCategoryBloc()
                 ],
               ),
               verticalSpacing(10.h),

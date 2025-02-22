@@ -11,4 +11,5 @@ class RouteName {
   static const String notifications = '/notifications';
   static const String settings = '/settings';
   static const String customerService = '/customer-service';
+
 }

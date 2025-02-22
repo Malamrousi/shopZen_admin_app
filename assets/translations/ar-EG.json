@@ -68,6 +68,19 @@
   
     "no_email": "لا يوجد بريد",
     "delete_user_successfully": "تم حذف المستخدم بنجاح",
-    "error_when_delete_user": "حدث خطأ أثناء حذف المستخدم"
+    "error_when_delete_user": "حدث خطأ أثناء حذف المستخدم",
+    "crate_new" :"اضافة جديد",
+    "search_for_category":"البحث عن التصنيفات",
+      "creation_at" :"انشاء في",
+  "updated_at" :"اخر تحديث",
+  "actions" :"الإجراءات",
+  "category_name":"اسم التصنيف",
+  "no_category_found":"لا يوجد تصنيف",
+  "error_while_fetching_Categories":"حدث خطأ أثناء جلب التصنيفات",
+  "create_new_category":"اضافة تصنيف جديد",
+  "add_image":"اضافة صورة",
+  "remove": "حذف",
+  "enter_the_category_name":"اضافة اسم التصنيف",
+  "update_category" : "تحديث التصنيف"
 
 }

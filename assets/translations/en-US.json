@@ -68,5 +68,19 @@
   "no_categories_found":"No categories found",
   "no_email":"No email",
   "delete_user_successfully":"Delete user successfully",
-  "error_when_delete_user":"Error when delete user"
+  "error_when_delete_user":"Error when delete user" ,
+  "crate_new":"Create New",
+  "search_for_category" :"Search for Category",
+  "creation_at" :"Creation At",
+  "updated_at" :"Last Updated",
+  "actions" :"Actions",
+  "category_name":"Category",
+  "no_category_found":"No category found",
+  "error_while_fetching_Categories":"Error while fetching Categories",
+  "create_new_category":"Create New Category",
+  "add_image":"Add Image",
+  "remove": "Remove",
+  "enter_the_category_name":"Enter The Category Name",
+  "update_category":"Update Category"
+
 }

@@ -6,14 +6,17 @@ import 'package:shopzen_admin_dashboard/core/cubit/app_cubit/app_cubit.dart';
 import 'package:shopzen_admin_dashboard/core/cubit/upload_image/upload_image_cubit.dart';
 import 'package:shopzen_admin_dashboard/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen_admin_dashboard/core/upload/repo/upload_image_repo.dart';
+import 'package:shopzen_admin_dashboard/features/category/presentation/bloc/create_category/create_category_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/home/data/data_source/dashboard_data_source.dart';
 import 'package:shopzen_admin_dashboard/features/home/data/repo/dashboard_repo.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/product_number/product_number_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_number/user_number_bloc.dart';
-
 import '../../features/auth/data/data_source/auth_data_source.dart';
 import '../../features/auth/data/repo/auth_repo.dart';
 import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import '../../features/category/data/data_source/category_data_source.dart';
+import '../../features/category/data/repo/category_repo.dart';
+import '../../features/category/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
 import '../../features/users/data/data_source/users_data_source.dart';
 import '../../features/users/data/repo/users_repo.dart';
@@ -121,5 +124,30 @@ Future<void> setupDependencies() async {
     () => DeleteUsersBloc(
       usersRepo: getIt.get<UsersRepo>(),
     ),
+  );
+
+  //getAllCategoriesDataSource
+  getIt.registerLazySingleton<CategoryDataSource>(
+    () => CategoryDataSource(
+      apiService: getIt.get<ApiService>(),
+    ),
+  );
+  //getAllCategoriesRepo
+  getIt.registerLazySingleton<CategoryRepo>(
+    () => CategoryRepo(
+      categoryDataSource: getIt.get<CategoryDataSource>(),
+    ),
+  );
+
+  //getAllCategoriesBloc
+  getIt.registerFactory<GetAllCategoriesBloc>(
+    () => GetAllCategoriesBloc(
+      getAllCategoriesRepo: getIt.get<CategoryRepo>(),
+    ),
+  );
+
+  //crate Category
+  getIt.registerFactory<CreateCategoryBloc>(
+    ()=>CreateCategoryBloc(categoryRepo:  getIt.get<CategoryRepo>(),)
   );
 }

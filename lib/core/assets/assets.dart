@@ -24,6 +24,8 @@ class Assets {
 
   static const String imagesLogoLightTheme = "assets/images/logo_light_theme.png";
 
+  static const String imagesNotFoundImage = "assets/images/not_found_image.png";
+
   static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";
 
   static const String imagesSplashScreen = "assets/images/splash_screen.png";

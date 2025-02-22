@@ -10,7 +10,7 @@ import '../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../core/utils/styles/app_text_styles.dart';
 import 'delete_user_icon.dart';
-import 'table_cell_title_widget.dart';
+import '../../../../../core/widgets/table_cell_title_widget.dart';
 
 class UserTable extends StatelessWidget {
   const UserTable({super.key, required this.usersList});
@@ -18,9 +18,7 @@ class UserTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
 
-    final bool isMobile = screenWidth < 600;
     bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
 
     return Table(
@@ -31,7 +29,7 @@ class UserTable extends StatelessWidget {
             ResponsiveLayout.isMobile(context) ? 190.w : 120.w), // Image column
         1: FlexColumnWidth(90.w), // Name column
         2: FlexColumnWidth(90.w), // Email column
-        3: FixedColumnWidth(isMobile ? 100.w : 90.w), // Delete column
+        3: FixedColumnWidth(ResponsiveLayout.isMobile(context) ? 100.w : 90.w), // Delete column
       },
       children: [
         TableRow(

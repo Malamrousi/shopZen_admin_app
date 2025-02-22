@@ -1,11 +1,19 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
 import 'package:shopzen_admin_dashboard/core/shared_pref/shared_prefs_key.dart';
 import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
 
+import '../../../../../../core/helper/spacing.dart';
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/utils/colors_manger.dart';
+import '../../../../../../core/widgets/app_text_form_filed.dart';
+import '../../../../../../core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/custom_drawer.dart';
+import '../../../../../../responsive_layout.dart';
+import '../get_all_categories_bloc.dart';
 
 class TabletCategoryScreen extends StatefulWidget {
   const TabletCategoryScreen({super.key});
@@ -50,8 +58,63 @@ class _TabletCategoryScreenState extends State<TabletCategoryScreen> {
         onItemSelected: _onItemSelected,
         selectedIndex: _selectedIndex,
       ),
-      body: Center(
-        child: Text("Category Mobile"),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              verticalSpacing(10.h),
+              AppTextFormFiled(
+                onChanged: (value) {},
+                validator: (value) {},
+                hintText: "search_for_category".tr(context),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    size: 26.sp,
+                    color: ColorsManger.primaryColor400,
+                  ),
+                  onPressed: () {},
+                ),
+                hintStyle: ResponsiveLayout.isDesktop(context)
+                    ? AppTextStyles.font16RegularThemeColor(context)
+                    : AppTextStyles.font16MediumFixedFontSizeWhite(context),
+              ),
+              verticalSpacing(40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "categories".tr(context),
+                    style: AppTextStyles.font16BoldFixedFontSize(context),
+                  ),
+                  CustomButton(
+                    onPressed: () {
+                    },
+                    title: "crate_new".tr(context),
+                    bottomHeight: 45.h,
+                    bottomWidth: 150.w,
+                    borderRadius: 10,
+                    backgroundColor: ColorsManger.primaryColor400,
+                    textStyle: ResponsiveLayout.isDesktop(context)
+                        ? AppTextStyles.font16RegularThemeColor(context)
+                        : AppTextStyles.font16MediumFixedFontSizeWhite(context),
+                  ),
+                ],
+              ),
+              verticalSpacing(10.h),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: SizedBox(
+                  child: SizedBox(
+                    width: max(MediaQuery.of(context).size.width, 800.w),
+                    child: GetAllCategoriesDataBloc(),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

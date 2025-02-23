@@ -62,7 +62,7 @@ class CategoryUploadImage extends StatelessWidget {
           } else {
             return InkWell(
               onTap: () {
-                context.read<UploadImageCubit>()..uploadImage();
+                context.read<UploadImageCubit>().uploadImage();
               },
               child: Container(
                 height: 200.h,

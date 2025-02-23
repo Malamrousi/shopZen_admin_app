@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/core/push_notification/firebase_cloud_messaging.dart';
 import 'package:shopzen_admin_dashboard/core/shared_pref/shared_pref.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/custom_drawer.dart';
 
@@ -49,9 +50,14 @@ class _MobileNotificationsScreenState extends State<MobileNotificationsScreen> {
         onItemSelected: _onItemSelected,
       ),
       body: Center(
-        child: Text(
-          "إشعارات الإدارة - Mobile",
-          style: AppTextStyles.font16Medium(context),
+        child: InkWell(
+          onTap: () {
+            FirebaseCloudMessaging.sendPushNotification(title: "Mohammed Mostafa", body: "Data");
+          },
+          child: Text(
+            "إشعارات الإدارة - Mobile",
+            style: AppTextStyles.font16Medium(context),
+          ),
         ),
       ),
     );

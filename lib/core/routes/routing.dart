@@ -18,7 +18,6 @@ import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/delete_
 import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/users/presentation/view/users_screen.dart';
 
-import '../../features/category/presentation/bloc/create_category/create_category_bloc.dart';
 import '../../features/category/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
 import '../../features/home/presentation/bloc/product_number/product_number_bloc.dart';

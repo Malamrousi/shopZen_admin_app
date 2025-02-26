@@ -87,6 +87,7 @@
   "notification_description":"Notification Description",
   "notification_image":"Notification Image",
   "product_id":"Product Id",
-  "push_notification":"Push Notification"
+  "push_notification":"Push Notification",
+  "all_notification":"All Notifications"
 
 }

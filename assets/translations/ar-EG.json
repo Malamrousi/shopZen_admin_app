@@ -81,6 +81,13 @@
   "add_image":"اضافة صورة",
   "remove": "حذف",
   "enter_the_category_name":"اضافة اسم التصنيف",
-  "update_category" : "تحديث التصنيف"
+  "update_category" : "تحديث التصنيف",
+  "create_notification":"اضافة اشعار جديد",
+  "notification_title":"عنوان الاشعار",
+  "notification_description":"وصف الاشعار",
+  "notification_image":"صورة الاشعار",
+  "enter_the_notification_title":"اضافة عنوان الاشعار",
+  "product_id": "رقم المنتج",
+  "push_notification":"ارسال اشعار"
 
 }

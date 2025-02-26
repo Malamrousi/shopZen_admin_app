@@ -81,6 +81,12 @@
   "add_image":"Add Image",
   "remove": "Remove",
   "enter_the_category_name":"Enter The Category Name",
-  "update_category":"Update Category"
+  "update_category":"Update Category",
+  "create_notification":"Create Notification",
+  "notification_title":"Notification Title",
+  "notification_description":"Notification Description",
+  "notification_image":"Notification Image",
+  "product_id":"Product Id",
+  "push_notification":"Push Notification"
 
 }

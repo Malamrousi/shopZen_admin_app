@@ -8,6 +8,7 @@ import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/app_text_form_filed.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/custom_button.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/add_notification/add_notification_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/get_all_notification/get_all_notification_bloc.dart';
 import '../../../../../../core/helper/spacing.dart';
 import '../../../../../../responsive_layout.dart';
 import '../../../../data/model/add_notification_model.dart';
@@ -96,20 +97,22 @@ class _CreateNotificationState extends State<CreateNotification> {
             verticalSpacing(30),
             BlocConsumer<AddNotificationBloc, AddNotificationState>(
               listener: (context, state) {
-                state.whenOrNull(success: () {
-                  ShowToast.showToastSuccessTop(
-                    message: "notification_created_successfully".tr(context),
-                    seconds: 2,
-                  );
-
-                },
-                failure: (message) {
-                  
-                  ShowToast.showToastErrorTop(
-                    message: "notification_created_failed".tr(context),
-                    seconds: 3,
-                  );
-                },
+                state.whenOrNull(
+                  success: () {
+                    ShowToast.showToastSuccessTop(
+                      message: "notification_created_successfully".tr(context),
+                      seconds: 2,
+                    );
+                    context.read<GetAllNotificationBloc>().add(
+                        GetAllNotificationEvent.viewAllNotification(
+                          ));
+                  },
+                  failure: (message) {
+                    ShowToast.showToastErrorTop(
+                      message: "notification_created_failed".tr(context),
+                      seconds: 3,
+                    );
+                  },
                 );
               },
               builder: (context, state) {

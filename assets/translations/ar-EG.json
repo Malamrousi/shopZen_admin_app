@@ -96,6 +96,8 @@
   "error_while_delete_notification":"حدث خطأ أثناء حذف الاشعار",
   "notification_created_failed":"حدث خطأ أثناء انشاء الاشعار",
   "notification_removed_successfully":"تم حذف الاشعار بنجاح",
-  "error_while_update_notification":"حدث خطأ أثناء تحديث الاشعار"
+  "error_while_update_notification":"حدث خطأ أثناء تحديث الاشعار",
+  "no_notification_found":"لا يوجد اشعارات",
+  "error_while_create_notification":"حدث خطأ أثناء انشاء الاشعار"
 
 }

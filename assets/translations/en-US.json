@@ -95,6 +95,7 @@
   "notification_updated_failed":"Notification updated failed",
   "notification_created_successfully":"Notification created successfully",
   "notification_created_failed":"Notification created failed",
-  "notification_removed_successfully":"Notification removed successfully"
+  "notification_removed_successfully":"Notification removed successfully",
+  "no_notification_found":"No notification found"
 
 }

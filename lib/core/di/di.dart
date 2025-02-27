@@ -11,6 +11,7 @@ import 'package:shopzen_admin_dashboard/features/home/data/data_source/dashboard
 import 'package:shopzen_admin_dashboard/features/home/data/repo/dashboard_repo.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/product_number/product_number_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_number/user_number_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/get_all_notification/get_all_notification_bloc.dart';
 import '../../features/auth/data/data_source/auth_data_source.dart';
 import '../../features/auth/data/repo/auth_repo.dart';
 import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
@@ -155,6 +156,10 @@ Future<void> setupDependencies() async {
 
   getIt.registerFactory<AddNotificationBloc>(
     () => AddNotificationBloc(
+    ),
+  );
+  getIt.registerFactory<GetAllNotificationBloc>(
+    () => GetAllNotificationBloc(
     ),
   );
 }

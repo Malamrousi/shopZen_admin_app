@@ -13,6 +13,7 @@ import 'package:shopzen_admin_dashboard/features/category/presentation/view/cate
 import 'package:shopzen_admin_dashboard/features/customer_services/presentation/view/customer_services_screen.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_number/user_number_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/add_notification/add_notification_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/get_all_notification/get_all_notification_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/view/notifications_screen.dart';
 import 'package:shopzen_admin_dashboard/features/settings/presentation/view/settings_screen.dart';
 import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/delete_user/delete_users_bloc.dart';
@@ -98,14 +99,13 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case RouteName.notifications:
       return PageFadeTransition(
-        page: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => getIt.get<AddNotificationBloc>()
-                
-            ),
-          ],
-          child: NotificationsScreen()),
+        page: MultiBlocProvider(providers: [
+          BlocProvider(create: (context) => getIt.get<AddNotificationBloc>()),
+          BlocProvider(
+              create: (context) => getIt.get<GetAllNotificationBloc>()
+                ..add(GetAllNotificationEvent.viewAllNotification(
+                ))),
+        ], child: NotificationsScreen()),
       );
     case RouteName.settings:
       return PageFadeTransition(

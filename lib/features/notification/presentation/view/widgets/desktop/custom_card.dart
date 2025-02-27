@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:shopzen_admin_dashboard/core/helper/data_extension.dart';
 import 'package:shopzen_admin_dashboard/core/helper/spacing.dart';
 import 'package:shopzen_admin_dashboard/core/utils/styles/app_text_styles.dart';
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../../core/utils/colors_manger.dart';
+import '../../../../data/model/add_notification_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+  const CustomCard({super.key, required this.notifications});
+  final AddNotificationModel notifications;
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +24,17 @@ class CustomCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Title: wiweiliweiw",
+              notifications.title ?? "title",
               style: AppTextStyles.font20Bold(context),
             ),
             verticalSpacing(5),
             Text(
-              "Body: body lasdlasldlas",
+              notifications.body ?? "body",
               style: AppTextStyles.font16RegularThemeColor(context),
             ),
             verticalSpacing(5),
             Text(
-              "Create At: 17-2-2024",
+              notifications.createAt?.getFormatDateMontDayYear() ?? DateTime.now().getFormatDateMontDayYear(),
               style: AppTextStyles.font16RegularThemeColor(context),
             ),
             Row(

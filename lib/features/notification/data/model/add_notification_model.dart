@@ -10,7 +10,7 @@ class AddNotificationModel extends HiveObject {
   @HiveField(2)
  final DateTime? createAt;
   @HiveField(3)
-  String? productId;
+  int? productId;
   AddNotificationModel({
     this.title,
     this.body,

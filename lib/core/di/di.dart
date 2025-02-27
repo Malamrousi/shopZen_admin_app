@@ -18,6 +18,7 @@ import '../../features/category/data/data_source/category_data_source.dart';
 import '../../features/category/data/repo/category_repo.dart';
 import '../../features/category/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
 import '../../features/home/presentation/bloc/category_number/category_number_bloc.dart';
+import '../../features/notification/presentation/bloc/add_notification/add_notification_bloc.dart';
 import '../../features/users/data/data_source/users_data_source.dart';
 import '../../features/users/data/repo/users_repo.dart';
 import '../../features/users/presentation/bloc/delete_user/delete_users_bloc.dart';
@@ -149,5 +150,11 @@ Future<void> setupDependencies() async {
   //crate Category
   getIt.registerFactory<CreateCategoryBloc>(
     ()=>CreateCategoryBloc(categoryRepo:  getIt.get<CategoryRepo>(),)
+  );
+  //addNotificationBloc
+
+  getIt.registerFactory<AddNotificationBloc>(
+    () => AddNotificationBloc(
+    ),
   );
 }

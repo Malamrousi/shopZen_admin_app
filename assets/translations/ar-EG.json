@@ -89,6 +89,13 @@
   "enter_the_notification_title":"اضافة عنوان الاشعار",
   "product_id": "رقم المنتج",
   "push_notification":"ارسال اشعار",
-  "all_notification":"كل الاشعارات"
+  "all_notification":"كل الاشعارات",
+  "enter_notification_description":"اضافة وصف الاشعار",
+  "notification_updated_successfully":"تم تحديث الاشعار بنجاح",
+  "error_while_fetching_notification":"حدث خطأ أثناء جلب الاشعارات",
+  "error_while_delete_notification":"حدث خطأ أثناء حذف الاشعار",
+  "notification_created_failed":"حدث خطأ أثناء انشاء الاشعار",
+  "notification_removed_successfully":"تم حذف الاشعار بنجاح",
+  "error_while_update_notification":"حدث خطأ أثناء تحديث الاشعار"
 
 }

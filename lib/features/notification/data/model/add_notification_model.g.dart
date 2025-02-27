@@ -20,7 +20,7 @@ class AddNotificationModelAdapter extends TypeAdapter<AddNotificationModel> {
       title: fields[0] as String?,
       body: fields[1] as String?,
       createAt: fields[2] as DateTime?,
-      productId: fields[3] as String?,
+      productId: (fields[3] as num?)?.toInt(),
     );
   }
 

@@ -22,34 +22,43 @@ mixin _$AddNotificationEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(AddNotificationModel addNotificationModel)
         createNotification,
+    required TResult Function(AddNotificationModel addNotificationModel)
+        deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AddNotificationModel addNotificationModel)?
         createNotification,
+    TResult? Function(AddNotificationModel addNotificationModel)?
+        deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AddNotificationModel addNotificationModel)?
         createNotification,
+    TResult Function(AddNotificationModel addNotificationModel)?
+        deleteNotification,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(createNotificationEvent value) createNotification,
+    required TResult Function(CreateNotificationEvent value) createNotification,
+    required TResult Function(DeleteNotificationEvent value) deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(createNotificationEvent value)? createNotification,
+    TResult? Function(CreateNotificationEvent value)? createNotification,
+    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(createNotificationEvent value)? createNotification,
+    TResult Function(CreateNotificationEvent value)? createNotification,
+    TResult Function(DeleteNotificationEvent value)? deleteNotification,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -98,25 +107,25 @@ class _$AddNotificationEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$createNotificationEventImplCopyWith<$Res>
+abstract class _$$CreateNotificationEventImplCopyWith<$Res>
     implements $AddNotificationEventCopyWith<$Res> {
-  factory _$$createNotificationEventImplCopyWith(
-          _$createNotificationEventImpl value,
-          $Res Function(_$createNotificationEventImpl) then) =
-      __$$createNotificationEventImplCopyWithImpl<$Res>;
+  factory _$$CreateNotificationEventImplCopyWith(
+          _$CreateNotificationEventImpl value,
+          $Res Function(_$CreateNotificationEventImpl) then) =
+      __$$CreateNotificationEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({AddNotificationModel addNotificationModel});
 }
 
 /// @nodoc
-class __$$createNotificationEventImplCopyWithImpl<$Res>
+class __$$CreateNotificationEventImplCopyWithImpl<$Res>
     extends _$AddNotificationEventCopyWithImpl<$Res,
-        _$createNotificationEventImpl>
-    implements _$$createNotificationEventImplCopyWith<$Res> {
-  __$$createNotificationEventImplCopyWithImpl(
-      _$createNotificationEventImpl _value,
-      $Res Function(_$createNotificationEventImpl) _then)
+        _$CreateNotificationEventImpl>
+    implements _$$CreateNotificationEventImplCopyWith<$Res> {
+  __$$CreateNotificationEventImplCopyWithImpl(
+      _$CreateNotificationEventImpl _value,
+      $Res Function(_$CreateNotificationEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AddNotificationEvent
@@ -126,7 +135,7 @@ class __$$createNotificationEventImplCopyWithImpl<$Res>
   $Res call({
     Object? addNotificationModel = null,
   }) {
-    return _then(_$createNotificationEventImpl(
+    return _then(_$CreateNotificationEventImpl(
       addNotificationModel: null == addNotificationModel
           ? _value.addNotificationModel
           : addNotificationModel // ignore: cast_nullable_to_non_nullable
@@ -137,8 +146,8 @@ class __$$createNotificationEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$createNotificationEventImpl implements createNotificationEvent {
-  const _$createNotificationEventImpl({required this.addNotificationModel});
+class _$CreateNotificationEventImpl implements CreateNotificationEvent {
+  const _$CreateNotificationEventImpl({required this.addNotificationModel});
 
   @override
   final AddNotificationModel addNotificationModel;
@@ -152,7 +161,7 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$createNotificationEventImpl &&
+            other is _$CreateNotificationEventImpl &&
             (identical(other.addNotificationModel, addNotificationModel) ||
                 other.addNotificationModel == addNotificationModel));
   }
@@ -165,15 +174,17 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$createNotificationEventImplCopyWith<_$createNotificationEventImpl>
-      get copyWith => __$$createNotificationEventImplCopyWithImpl<
-          _$createNotificationEventImpl>(this, _$identity);
+  _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
+      get copyWith => __$$CreateNotificationEventImplCopyWithImpl<
+          _$CreateNotificationEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AddNotificationModel addNotificationModel)
         createNotification,
+    required TResult Function(AddNotificationModel addNotificationModel)
+        deleteNotification,
   }) {
     return createNotification(addNotificationModel);
   }
@@ -183,6 +194,8 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AddNotificationModel addNotificationModel)?
         createNotification,
+    TResult? Function(AddNotificationModel addNotificationModel)?
+        deleteNotification,
   }) {
     return createNotification?.call(addNotificationModel);
   }
@@ -192,6 +205,8 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AddNotificationModel addNotificationModel)?
         createNotification,
+    TResult Function(AddNotificationModel addNotificationModel)?
+        deleteNotification,
     required TResult orElse(),
   }) {
     if (createNotification != null) {
@@ -203,7 +218,8 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(createNotificationEvent value) createNotification,
+    required TResult Function(CreateNotificationEvent value) createNotification,
+    required TResult Function(DeleteNotificationEvent value) deleteNotification,
   }) {
     return createNotification(this);
   }
@@ -211,7 +227,8 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(createNotificationEvent value)? createNotification,
+    TResult? Function(CreateNotificationEvent value)? createNotification,
+    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
   }) {
     return createNotification?.call(this);
   }
@@ -219,7 +236,8 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(createNotificationEvent value)? createNotification,
+    TResult Function(CreateNotificationEvent value)? createNotification,
+    TResult Function(DeleteNotificationEvent value)? deleteNotification,
     required TResult orElse(),
   }) {
     if (createNotification != null) {
@@ -229,10 +247,10 @@ class _$createNotificationEventImpl implements createNotificationEvent {
   }
 }
 
-abstract class createNotificationEvent implements AddNotificationEvent {
-  const factory createNotificationEvent(
+abstract class CreateNotificationEvent implements AddNotificationEvent {
+  const factory CreateNotificationEvent(
           {required final AddNotificationModel addNotificationModel}) =
-      _$createNotificationEventImpl;
+      _$CreateNotificationEventImpl;
 
   @override
   AddNotificationModel get addNotificationModel;
@@ -241,7 +259,164 @@ abstract class createNotificationEvent implements AddNotificationEvent {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$createNotificationEventImplCopyWith<_$createNotificationEventImpl>
+  _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteNotificationEventImplCopyWith<$Res>
+    implements $AddNotificationEventCopyWith<$Res> {
+  factory _$$DeleteNotificationEventImplCopyWith(
+          _$DeleteNotificationEventImpl value,
+          $Res Function(_$DeleteNotificationEventImpl) then) =
+      __$$DeleteNotificationEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({AddNotificationModel addNotificationModel});
+}
+
+/// @nodoc
+class __$$DeleteNotificationEventImplCopyWithImpl<$Res>
+    extends _$AddNotificationEventCopyWithImpl<$Res,
+        _$DeleteNotificationEventImpl>
+    implements _$$DeleteNotificationEventImplCopyWith<$Res> {
+  __$$DeleteNotificationEventImplCopyWithImpl(
+      _$DeleteNotificationEventImpl _value,
+      $Res Function(_$DeleteNotificationEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddNotificationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? addNotificationModel = null,
+  }) {
+    return _then(_$DeleteNotificationEventImpl(
+      addNotificationModel: null == addNotificationModel
+          ? _value.addNotificationModel
+          : addNotificationModel // ignore: cast_nullable_to_non_nullable
+              as AddNotificationModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
+  const _$DeleteNotificationEventImpl({required this.addNotificationModel});
+
+  @override
+  final AddNotificationModel addNotificationModel;
+
+  @override
+  String toString() {
+    return 'AddNotificationEvent.deleteNotification(addNotificationModel: $addNotificationModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteNotificationEventImpl &&
+            (identical(other.addNotificationModel, addNotificationModel) ||
+                other.addNotificationModel == addNotificationModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, addNotificationModel);
+
+  /// Create a copy of AddNotificationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
+      get copyWith => __$$DeleteNotificationEventImplCopyWithImpl<
+          _$DeleteNotificationEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddNotificationModel addNotificationModel)
+        createNotification,
+    required TResult Function(AddNotificationModel addNotificationModel)
+        deleteNotification,
+  }) {
+    return deleteNotification(addNotificationModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddNotificationModel addNotificationModel)?
+        createNotification,
+    TResult? Function(AddNotificationModel addNotificationModel)?
+        deleteNotification,
+  }) {
+    return deleteNotification?.call(addNotificationModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddNotificationModel addNotificationModel)?
+        createNotification,
+    TResult Function(AddNotificationModel addNotificationModel)?
+        deleteNotification,
+    required TResult orElse(),
+  }) {
+    if (deleteNotification != null) {
+      return deleteNotification(addNotificationModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateNotificationEvent value) createNotification,
+    required TResult Function(DeleteNotificationEvent value) deleteNotification,
+  }) {
+    return deleteNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CreateNotificationEvent value)? createNotification,
+    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
+  }) {
+    return deleteNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateNotificationEvent value)? createNotification,
+    TResult Function(DeleteNotificationEvent value)? deleteNotification,
+    required TResult orElse(),
+  }) {
+    if (deleteNotification != null) {
+      return deleteNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteNotificationEvent implements AddNotificationEvent {
+  const factory DeleteNotificationEvent(
+          {required final AddNotificationModel addNotificationModel}) =
+      _$DeleteNotificationEventImpl;
+
+  @override
+  AddNotificationModel get addNotificationModel;
+
+  /// Create a copy of AddNotificationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

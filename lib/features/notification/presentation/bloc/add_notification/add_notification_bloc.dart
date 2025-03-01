@@ -12,11 +12,12 @@ part 'add_notification_bloc.freezed.dart';
 class AddNotificationBloc
     extends Bloc<AddNotificationEvent, AddNotificationState> {
   AddNotificationBloc() : super(const _Initial()) {
-    on<createNotificationEvent>(createNotification);
+    on<CreateNotificationEvent>(createNotification);
+    on<DeleteNotificationEvent>(deleteNotification);
   }
 
   FutureOr<void> createNotification(
-      createNotificationEvent event, Emitter<AddNotificationState> emit) async {
+      CreateNotificationEvent event, Emitter<AddNotificationState> emit) async {
     emit(const AddNotificationState.loading());
     try {
       await HiveDataBase().notificationBox!.add(event.addNotificationModel);
@@ -24,5 +25,12 @@ class AddNotificationBloc
     } catch (e) {
       emit(AddNotificationState.failure(message: e.toString()));
     }
+  }
+
+  FutureOr<void> deleteNotification(
+      DeleteNotificationEvent event, Emitter<AddNotificationState> emit) async {
+    emit(const AddNotificationState.loading());
+    await  event.addNotificationModel.delete();
+    emit(const AddNotificationState.success());
   }
 }

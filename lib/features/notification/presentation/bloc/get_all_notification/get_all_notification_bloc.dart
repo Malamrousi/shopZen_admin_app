@@ -15,19 +15,19 @@ class GetAllNotificationBloc
     on<ViewAllNotificationEvent>(getAllNotification);
   }
 
-  FutureOr<void> getAllNotification(
-      ViewAllNotificationEvent event, Emitter<GetAllNotificationState> emit) async{
-       emit(GetAllNotificationState.loading());
-        try {
-        
-         final notificationsList =  HiveDataBase().notificationBox!.values.toList();
-         if(notificationsList.isEmpty){
-           emit(const GetAllNotificationState.empty());
-         }else{
-           emit(GetAllNotificationState.success(notificationsList: notificationsList));
-         }
-        } catch (e) {
-          emit(GetAllNotificationState.failure(message: e.toString()));
-        }
+  FutureOr<void> getAllNotification(ViewAllNotificationEvent event,
+      Emitter<GetAllNotificationState> emit) async {
+    emit(GetAllNotificationState.loading());
+    try {
+      final notificationsList = HiveDataBase().notificationBox!.values.toList();
+      if (notificationsList.isEmpty) {
+        emit(const GetAllNotificationState.empty());
+      } else {
+        emit(GetAllNotificationState.success(
+            notificationsList: notificationsList));
       }
+    } catch (e) {
+      emit(GetAllNotificationState.failure(message: e.toString()));
+    }
+  }
 }

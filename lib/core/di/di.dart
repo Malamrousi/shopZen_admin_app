@@ -11,7 +11,10 @@ import 'package:shopzen_admin_dashboard/features/home/data/data_source/dashboard
 import 'package:shopzen_admin_dashboard/features/home/data/repo/dashboard_repo.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/product_number/product_number_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_number/user_number_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/notification/data/data_source/send_notification_data_source.dart';
+import 'package:shopzen_admin_dashboard/features/notification/data/repo/send_notification_repo.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/get_all_notification/get_all_notification_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/send_notification/send_notification_bloc.dart';
 import '../../features/auth/data/data_source/auth_data_source.dart';
 import '../../features/auth/data/repo/auth_repo.dart';
 import '../../features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
@@ -149,17 +152,30 @@ Future<void> setupDependencies() async {
   );
 
   //crate Category
-  getIt.registerFactory<CreateCategoryBloc>(
-    ()=>CreateCategoryBloc(categoryRepo:  getIt.get<CategoryRepo>(),)
-  );
+  getIt.registerFactory<CreateCategoryBloc>(() => CreateCategoryBloc(
+        categoryRepo: getIt.get<CategoryRepo>(),
+      ));
   //addNotificationBloc
 
   getIt.registerFactory<AddNotificationBloc>(
-    () => AddNotificationBloc(
-    ),
+    () => AddNotificationBloc(),
   );
   getIt.registerFactory<GetAllNotificationBloc>(
-    () => GetAllNotificationBloc(
+    () => GetAllNotificationBloc(),
+  );
+  getIt.registerLazySingleton<SendNotificationDataSource>(
+    () => SendNotificationDataSource(),
+  );
+
+  getIt.registerLazySingleton<SendNotificationRepo>(
+    () => SendNotificationRepo(
+      sendNotificationDataSource: getIt.get<SendNotificationDataSource>(),
+    ),
+  );
+
+  getIt.registerFactory<SendNotificationBloc>(
+    () => SendNotificationBloc(
+      sendNotificationRepo: getIt.get<SendNotificationRepo>(),
     ),
   );
 }

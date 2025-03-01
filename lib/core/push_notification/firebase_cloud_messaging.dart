@@ -16,7 +16,6 @@ class FirebaseCloudMessaging {
   static Future<void> sendPushNotification(
       {required String title,
       required String body,
-      required String? image,
       required int productId}) async {
     try {
       final response = await Dio().post(
@@ -30,7 +29,7 @@ class FirebaseCloudMessaging {
         data: {
           "message": {
             "topic": topic,
-            "notification": {"title": title, "body": body, "image": image},
+            "notification": {"title": title, "body": body, },
           }
         },
       );

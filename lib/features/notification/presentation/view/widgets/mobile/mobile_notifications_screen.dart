@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
-import 'package:shopzen_admin_dashboard/core/assets/assets.dart';
-import 'package:shopzen_admin_dashboard/core/push_notification/firebase_cloud_messaging.dart';
+
 import 'package:shopzen_admin_dashboard/core/shared_pref/shared_pref.dart';
 import 'package:shopzen_admin_dashboard/core/widgets/custom_drawer.dart';
 
@@ -55,8 +54,7 @@ class _MobileNotificationsScreenState extends State<MobileNotificationsScreen> {
       body: Center(
         child: InkWell(
           onTap: () {
-            FirebaseCloudMessaging.sendPushNotification(
-                title: "welcome To ShopZen", body: "shopzen is here", image: Assets.imagesAppIcon , productId: 1);
+         
           },
           child: Text(
             "إشعارات الإدارة - Mobile",

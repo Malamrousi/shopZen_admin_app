@@ -14,6 +14,7 @@ import 'package:shopzen_admin_dashboard/features/customer_services/presentation/
 import 'package:shopzen_admin_dashboard/features/home/presentation/bloc/users_number/user_number_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/add_notification/add_notification_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/get_all_notification/get_all_notification_bloc.dart';
+import 'package:shopzen_admin_dashboard/features/notification/presentation/bloc/send_notification/send_notification_bloc.dart';
 import 'package:shopzen_admin_dashboard/features/notification/presentation/view/notifications_screen.dart';
 import 'package:shopzen_admin_dashboard/features/settings/presentation/view/settings_screen.dart';
 import 'package:shopzen_admin_dashboard/features/users/presentation/bloc/delete_user/delete_users_bloc.dart';
@@ -102,9 +103,16 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         page: MultiBlocProvider(providers: [
           BlocProvider(create: (context) => getIt.get<AddNotificationBloc>()),
           BlocProvider(
-              create: (context) => getIt.get<GetAllNotificationBloc>()
-                ..add(GetAllNotificationEvent.viewAllNotification(
-                ))),
+            create: (context) => getIt.get<GetAllNotificationBloc>()
+              ..add(
+                GetAllNotificationEvent.viewAllNotification(),
+              ),
+          ),
+            BlocProvider(
+            create: (context) => getIt.get<SendNotificationBloc>()
+           
+              ),
+          
         ], child: NotificationsScreen()),
       );
     case RouteName.settings:

@@ -44,6 +44,7 @@ class AllNotification extends StatelessWidget {
                 itemCount: data.length,
                 itemBuilder: (context, index) {
                   return  CustomCard(
+                    indexId: index,
                     notifications: data[index],
                   );
                 },

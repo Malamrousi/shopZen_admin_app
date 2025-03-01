@@ -7,10 +7,12 @@ import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/shared_pref/shared_prefs_key.dart';
 import '../../../../../../core/utils/colors_manger.dart';
 import '../../../../data/model/add_notification_model.dart';
+import 'send_notification_bottom..dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key, required this.notifications});
+  const CustomCard({super.key, required this.notifications, required this.indexId});
   final AddNotificationModel notifications;
+  final int indexId;
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +47,10 @@ class CustomCard extends StatelessWidget {
                 DeleteNotificationBottom(
                   addNotificationModel: notifications,
                 ),
-                IconButton(
-                  icon: const Icon(Icons.send, color: Colors.green),
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  iconSize: 20,
-                ),
+              SendNotificationBottom(
+                addNotificationModel: notifications,
+                indexId: indexId,
+              )
               ],
             ),
           ],

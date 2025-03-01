@@ -81,6 +81,22 @@
   "add_image":"Add Image",
   "remove": "Remove",
   "enter_the_category_name":"Enter The Category Name",
-  "update_category":"Update Category"
+  "update_category":"Update Category",
+  "create_notification":"Create Notification",
+  "notification_title":"Notification Title",
+  "notification_description":"Notification Description",
+  "notification_image":"Notification Image",
+  "product_id":"Product Id",
+  "push_notification":"Push Notification",
+  "all_notification":"All Notifications",
+  "enter_the_notification_title":"Enter The Notification Title",
+  "enter_notification_description":"Enter Notification Description",
+  "notification_updated_successfully":"Notification updated successfully",
+  "notification_updated_failed":"Notification updated failed",
+  "notification_created_successfully":"Notification created successfully",
+  "notification_created_failed":"Notification created failed",
+  "notification_removed_successfully":"Notification removed successfully",
+  "no_notification_found":"No notification found",
+  "notification_sent_successfully":"Notification sent successfully"
 
 }

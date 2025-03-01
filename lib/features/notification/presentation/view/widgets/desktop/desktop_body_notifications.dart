@@ -3,7 +3,7 @@ import 'package:shopzen_admin_dashboard/core/widgets/custom_drawer.dart';
 
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/shared_pref/shared_prefs_key.dart';
-import '../../../../../../core/utils/styles/app_text_styles.dart';
+import 'desktop_display_body.dart';
 
 class DesktopBodyNotifications extends StatefulWidget {
   const DesktopBodyNotifications({super.key});
@@ -36,12 +36,7 @@ class _DesktopBodyNotificationsState extends State<DesktopBodyNotifications> {
         ),
         Expanded(
           flex: 4,
-          child: Center(
-            child: Text(
-              "إشعارات الإدارة - Desktop",
-              style: AppTextStyles.font16Medium(context),
-            ),
-          ),
+          child: DesktopDisplayBody()
         )
       ],
     );

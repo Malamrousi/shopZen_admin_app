@@ -112,6 +112,12 @@ class AppTextStyles {
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
+        static TextStyle font20Bold(BuildContext context) => TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeightManger.bold,
+        color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
 
   static TextStyle font16BoldFixedFontSize(BuildContext context) => TextStyle(
         fontSize: 16.sp,

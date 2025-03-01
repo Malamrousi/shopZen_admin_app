@@ -81,6 +81,24 @@
   "add_image":"اضافة صورة",
   "remove": "حذف",
   "enter_the_category_name":"اضافة اسم التصنيف",
-  "update_category" : "تحديث التصنيف"
+  "update_category" : "تحديث التصنيف",
+  "create_notification":"اضافة اشعار جديد",
+  "notification_title":"عنوان الاشعار",
+  "notification_description":"وصف الاشعار",
+  "notification_image":"صورة الاشعار",
+  "enter_the_notification_title":"اضافة عنوان الاشعار",
+  "product_id": "رقم المنتج",
+  "push_notification":"ارسال اشعار",
+  "all_notification":"كل الاشعارات",
+  "enter_notification_description":"اضافة وصف الاشعار",
+  "notification_updated_successfully":"تم تحديث الاشعار بنجاح",
+  "error_while_fetching_notification":"حدث خطأ أثناء جلب الاشعارات",
+  "error_while_delete_notification":"حدث خطأ أثناء حذف الاشعار",
+  "notification_created_failed":"حدث خطأ أثناء انشاء الاشعار",
+  "notification_removed_successfully":"تم حذف الاشعار بنجاح",
+  "error_while_update_notification":"حدث خطأ أثناء تحديث الاشعار",
+  "no_notification_found":"لا يوجد اشعارات",
+  "error_while_create_notification":"حدث خطأ أثناء انشاء الاشعار",
+  "notification_sent_successfully":"تم ارسال الاشعار بنجاح"
 
 }

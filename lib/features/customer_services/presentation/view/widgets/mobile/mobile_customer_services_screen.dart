@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopzen_admin_dashboard/core/app/app_localizations.dart';
+import 'package:shopzen_admin_dashboard/features/customer_services/tawk_chat_widget.dart';
 
 import '../../../../../../core/shared_pref/shared_pref.dart';
 import '../../../../../../core/shared_pref/shared_prefs_key.dart';
@@ -47,7 +48,7 @@ class _MobileCustomerServicesScreenState extends State<MobileCustomerServicesScr
       onItemSelected: _onItemSelected,
       selectedIndex: selectedIndex,
       ),
-      body: Center(child: Text("customer_services Mobile"),),
+      body: TawkChatWidgest(userName: "Moahmed", userEmail: "",),
     );
   }
 }

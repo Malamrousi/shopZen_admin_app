@@ -24,7 +24,11 @@ class SendNotificationBloc
       body: event.body,
       productId: event.productId,
     );
-    response.when(success: (_) {
+    response.when(success: (_) async {
+      await sendNotificationRepo.addNotificationToAllUsersFirebase(
+          body: event.body,
+          title: event.title,
+          productId: event.productId.toString());
       emit(const SendNotificationState.success());
     }, failure: (message) {
       emit(SendNotificationState.failure(message: message));

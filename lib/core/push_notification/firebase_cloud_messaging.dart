@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -9,14 +8,17 @@ class FirebaseCloudMessaging {
   FirebaseCloudMessaging._();
   static final FirebaseCloudMessaging instance = FirebaseCloudMessaging._();
   factory FirebaseCloudMessaging() => instance;
+  
   final fcm = FirebaseMessaging.instance;
   static final String url = dotenv.env['FCM_URL'] ?? '';
   static final String? accessToken = dotenv.env['FCM_ACCESS_TOKEN'];
   static final String topic = dotenv.env['TOPIC'] ?? '';
-  static Future<void> sendPushNotification(
-      {required String title,
-      required String body,
-      required int productId}) async {
+  
+  static Future<void> sendPushNotification({
+    required String title,
+    required String body,
+    required int productId,
+  }) async {
     try {
       final response = await Dio().post(
         url,
@@ -29,11 +31,16 @@ class FirebaseCloudMessaging {
         data: {
           "message": {
             "topic": topic,
-            "notification": {"title": title, "body": body, },
+            "notification": {
+              "title": title,
+              "body": body,
+            },
+            "data": {
+              "productId": productId.toString(),
+            }
           }
         },
       );
-
       log("Notification Response => ${response.data}");
     } catch (e) {
       debugPrint("Error sending FCM notification: $e");

@@ -11,15 +11,27 @@ class SendNotificationRepo {
     required String body,
     required int? productId,
   }) async {
-  try {
-    final response = await sendNotificationDataSource.sendNotification(
-      title: title,
+    try {
+      final response = await sendNotificationDataSource.sendNotification(
+        title: title,
+        body: body,
+        productId: productId,
+      );
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(e.toString());
+    }
+  }
+
+  Future<void> addNotificationToAllUsersFirebase({
+    required String body,
+    required String title,
+    required String productId,
+  }) async {
+    await sendNotificationDataSource.addNotificationToAllUsersFirebase(
       body: body,
+      title: title,
       productId: productId,
     );
-    return ApiResult.success(response);
-  }catch (e) {
-    return ApiResult.failure(e.toString());
-  }
   }
 }

@@ -12,7 +12,7 @@ class ColorsManger {
 
    // Neutral Colors
  static const Color gray50 = Color(0xfffbfbfc);
- static const Color gray100 = Color(0xffeeef1);
+ static const Color gray100 = Color(0x0ffeeef1);
  static const Color gray200 = Color(0xffe0e0e5);
  static const Color gray300 = Color(0xffcecdd4); 
  static const Color gray400 = Color(0xffc2c1c9);
